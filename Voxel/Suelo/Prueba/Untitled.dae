@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author/>
+      <authoring_tool>FBX COLLADA exporter</authoring_tool>
+      <comments/>
+    </contributor>
+    <created>2023-03-03T20:49:43Z</created>
+    <keywords/>
+    <modified>2023-03-03T20:49:43Z</modified>
+    <revision/>
+    <subject/>
+    <title/>
+    <unit meter="0.025400" name="centimeter"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="Content-diffuse-tex-image" name="Content-diffuse-tex">
+      <init_from>file://C:\Users\carol\Desktop\PROYECTO PINGUINO\objs\PlatformUVS\Content_diffuse.png</init_from>
+    </image>
+    <image id="Content-emissive-tex-image" name="Content-emissive-tex">
+      <init_from>file://C:\Users\carol\Desktop\PROYECTO PINGUINO\objs\PlatformUVS\Content_emissive.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="Content-Material" name="Content-Material">
+      <instance_effect url="#Content-Material-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="Content-Material-fx" name="Content-Material">
+      <profile_COMMON>
+        <technique sid="standard">
+          <phong>
+            <emission>
+              <texture texture="Content-emissive-tex-image" texcoord="CHANNEL0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU sid="wrapU0">TRUE</wrapU>
+                    <wrapV sid="wrapV0">TRUE</wrapV>
+                    <blend_mode>ADD</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.800000  0.800000 0.800000 1.000000</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Content-diffuse-tex-image" texcoord="CHANNEL0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU sid="wrapU0">TRUE</wrapU>
+                    <wrapV sid="wrapV0">TRUE</wrapV>
+                    <blend_mode>ADD</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.000000  0.000000 0.000000 1.000000</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">5.000000</float>
+            </shininess>
+            <transparency>
+              <float sid="transparency">0.000000</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="Content-lib" name="ContentMesh">
+      <mesh>
+        <source id="Content-POSITION">
+          <float_array id="Content-POSITION-array" count="72">
+-128.000000 -25.000000 80.000000
+-128.000000 25.000000 80.000000
+-128.000000 25.000000 -80.000000
+-128.000000 -25.000000 -80.000000
+128.000000 -25.000000 -80.000000
+128.000000 25.000000 -80.000000
+128.000000 25.000000 80.000000
+128.000000 -25.000000 80.000000
+-128.000000 -25.000000 -80.000000
+128.000000 -25.000000 -80.000000
+128.000000 -25.000000 80.000000
+-128.000000 -25.000000 80.000000
+-128.000000 25.000000 80.000000
+128.000000 25.000000 80.000000
+128.000000 25.000000 -80.000000
+-128.000000 25.000000 -80.000000
+-128.000000 25.000000 -80.000000
+128.000000 25.000000 -80.000000
+128.000000 -25.000000 -80.000000
+-128.000000 -25.000000 -80.000000
+-128.000000 -25.000000 80.000000
+128.000000 -25.000000 80.000000
+128.000000 25.000000 80.000000
+-128.000000 25.000000 80.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Content-POSITION-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Content-Normal0">
+          <float_array id="Content-Normal0-array" count="108">
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 0.000000 -1.000000
+0.000000 0.000000 -1.000000
+0.000000 0.000000 -1.000000
+0.000000 0.000000 -1.000000
+0.000000 0.000000 -1.000000
+0.000000 0.000000 -1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Content-Normal0-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Content-UV0">
+          <float_array id="Content-UV0-array" count="48">
+0.368303 0.582741
+0.368303 0.387538
+0.992953 0.387538
+0.992953 0.582741
+0.992953 0.381565
+0.992953 0.186362
+0.368303 0.186362
+0.368303 0.381565
+0.016423 0.619574
+0.988312 0.619574
+0.988312 0.012143
+0.016423 0.012143
+0.018756 0.163351
+0.991489 0.163351
+0.991489 0.771309
+0.018756 0.771309
+0.000003 0.794542
+0.999443 0.794542
+0.999443 0.989745
+0.000003 0.989745
+0.000003 0.786734
+0.999443 0.786734
+0.999443 0.591531
+0.000003 0.591531
+</float_array>
+          <technique_common>
+            <accessor source="#Content-UV0-array" count="24" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Content-VERTEX">
+          <input semantic="POSITION" source="#Content-POSITION"/>
+        </vertices>
+        <triangles count="12" material="Content-Material">
+          <input semantic="VERTEX" offset="0" source="#Content-VERTEX"/>
+          <input semantic="NORMAL" offset="1" source="#Content-Normal0"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#Content-UV0"/>
+          <p> 2 0 2 0 1 0 1 2 1 0 3 0 2 4 2 3 5 3 7 6 7 4 7 4 6 8 6 6 9 6 4 10 4 5 11 5 10 12 10 11 13 11 8 14 8 10 15 10 8 16 8 9 17 9 13 18 13 14 19 14 12 20 12 12 21 12 14 22 14 15 23 15 18 24 18 19 25 19 16 26 16 18 27 18 16 28 16 17 29 17 22 30 22 23 31 23 20 32 20 22 33 22 20 34 20 21 35 21</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations>
+    <animation id="Content-anim" name="Content">
+      <animation>
+        <source id="Content-Matrix-animation-input">
+          <float_array id="Content-Matrix-animation-input-array" count="0">
+</float_array>
+          <technique_common>
+            <accessor source="#Content-Matrix-animation-input-array" count="0">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Content-Matrix-animation-output-transform">
+          <float_array id="Content-Matrix-animation-output-transform-array" count="0">
+</float_array>
+          <technique_common>
+            <accessor source="#Content-Matrix-animation-output-transform-array" count="0" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Content-Interpolations">
+          <Name_array id="Content-Interpolations-array" count="0">
+</Name_array>
+          <technique_common>
+            <accessor source="#Content-Interpolations-array" count="0">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Content-Matrix-animation-transform">
+          <input semantic="INPUT" source="#Content-Matrix-animation-input"/>
+          <input semantic="OUTPUT" source="#Content-Matrix-animation-output-transform"/>
+          <input semantic="INTERPOLATION" source="#Content-Interpolations"/>
+        </sampler>
+        <channel source="#Content-Matrix-animation-transform" target="Content/matrix"/>
+      </animation>
+    </animation>
+  </library_animations>
+  <library_visual_scenes>
+    <visual_scene id="Untitled" name="Untitled">
+      <node name="Content" id="Content" sid="Content">
+        <matrix sid="matrix">0.393701 0.000000 0.000000 0.000000 0.000000 0.393701 0.000000 0.000000 0.000000 0.000000 0.393701 0.000000 0.000000 0.000000 0.000000 1.000000</matrix>
+        <instance_geometry url="#Content-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Content-Material" target="#Content-Material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="FCOLLADA">
+            <visibility>1.000000</visibility>
+          </technique>
+        </extra>
+      </node>
+      <extra>
+        <technique profile="MAX3D">
+          <frame_rate>30.000000</frame_rate>
+        </technique>
+        <technique profile="FCOLLADA">
+          <start_time>0.000000</start_time>
+          <end_time>3.333333</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Untitled"/>
+  </scene>
+</COLLADA>

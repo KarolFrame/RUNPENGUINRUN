@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2023-03-03T23:07:25Z</created>
+    <modified>2023-03-03T23:07:25Z</modified>
+    <revision>1.0</revision>
+  </asset>
+  <library_images>
+    <image id="Cuerpo-diffuse-tex" name="Cuerpo-diffuse-tex">
+      <init_from>Untitled_res/Cuerpo_diffuse.png</init_from>
+    </image>
+    <image id="Cuerpo-emissive-tex" name="Cuerpo-emissive-tex">
+      <init_from>Untitled_res/Cuerpo_emissive.png</init_from>
+    </image>
+    <image id="Cabeza-diffuse-tex" name="Cabeza-diffuse-tex">
+      <init_from>Untitled_res/Cabeza_diffuse.png</init_from>
+    </image>
+    <image id="Cabeza-emissive-tex" name="Cabeza-emissive-tex">
+      <init_from>Untitled_res/Cabeza_emissive.png</init_from>
+    </image>
+    <image id="AletaDer-diffuse-tex" name="AletaDer-diffuse-tex">
+      <init_from>Untitled_res/AletaDer_diffuse.png</init_from>
+    </image>
+    <image id="AletaDer-emissive-tex" name="AletaDer-emissive-tex">
+      <init_from>Untitled_res/AletaDer_emissive.png</init_from>
+    </image>
+    <image id="Cola-diffuse-tex" name="Cola-diffuse-tex">
+      <init_from>Untitled_res/Cola_diffuse.png</init_from>
+    </image>
+    <image id="Cola-emissive-tex" name="Cola-emissive-tex">
+      <init_from>Untitled_res/Cola_emissive.png</init_from>
+    </image>
+    <image id="AletaIzq-diffuse-tex" name="AletaIzq-diffuse-tex">
+      <init_from>Untitled_res/AletaIzq_diffuse.png</init_from>
+    </image>
+    <image id="AletaIzq-emissive-tex" name="AletaIzq-emissive-tex">
+      <init_from>Untitled_res/AletaIzq_emissive.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="Cuerpo-Effect">
+      <profile_COMMON>
+        <newparam sid="Cuerpo-diffuse-surface">
+          <surface type="2D">
+            <init_from>Cuerpo-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Cuerpo-emissive-surface">
+          <surface type="2D">
+            <init_from>Cuerpo-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Cuerpo-diffuse-sampler">
+          <sampler2D>
+            <source>Cuerpo-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="Cuerpo-emissive-sampler">
+          <sampler2D>
+            <source>Cuerpo-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="Cuerpo-tex-bind" texture="Cuerpo-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="Cuerpo-tex-bind" texture="Cuerpo-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Cabeza-Effect">
+      <profile_COMMON>
+        <newparam sid="Cabeza-diffuse-surface">
+          <surface type="2D">
+            <init_from>Cabeza-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Cabeza-emissive-surface">
+          <surface type="2D">
+            <init_from>Cabeza-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Cabeza-diffuse-sampler">
+          <sampler2D>
+            <source>Cabeza-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="Cabeza-emissive-sampler">
+          <sampler2D>
+            <source>Cabeza-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="Cabeza-tex-bind" texture="Cabeza-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="Cabeza-tex-bind" texture="Cabeza-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="AletaDer-Effect">
+      <profile_COMMON>
+        <newparam sid="AletaDer-diffuse-surface">
+          <surface type="2D">
+            <init_from>AletaDer-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="AletaDer-emissive-surface">
+          <surface type="2D">
+            <init_from>AletaDer-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="AletaDer-diffuse-sampler">
+          <sampler2D>
+            <source>AletaDer-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="AletaDer-emissive-sampler">
+          <sampler2D>
+            <source>AletaDer-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="AletaDer-tex-bind" texture="AletaDer-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="AletaDer-tex-bind" texture="AletaDer-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Cola-Effect">
+      <profile_COMMON>
+        <newparam sid="Cola-diffuse-surface">
+          <surface type="2D">
+            <init_from>Cola-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Cola-emissive-surface">
+          <surface type="2D">
+            <init_from>Cola-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Cola-diffuse-sampler">
+          <sampler2D>
+            <source>Cola-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="Cola-emissive-sampler">
+          <sampler2D>
+            <source>Cola-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="Cola-tex-bind" texture="Cola-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="Cola-tex-bind" texture="Cola-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="AletaIzq-Effect">
+      <profile_COMMON>
+        <newparam sid="AletaIzq-diffuse-surface">
+          <surface type="2D">
+            <init_from>AletaIzq-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="AletaIzq-emissive-surface">
+          <surface type="2D">
+            <init_from>AletaIzq-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="AletaIzq-diffuse-sampler">
+          <sampler2D>
+            <source>AletaIzq-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="AletaIzq-emissive-sampler">
+          <sampler2D>
+            <source>AletaIzq-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="AletaIzq-tex-bind" texture="AletaIzq-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="AletaIzq-tex-bind" texture="AletaIzq-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="Cuerpo-Material">
+      <instance_effect url="#Cuerpo-Effect"/>
+    </material>
+    <material id="Cabeza-Material">
+      <instance_effect url="#Cabeza-Effect"/>
+    </material>
+    <material id="AletaDer-Material">
+      <instance_effect url="#AletaDer-Effect"/>
+    </material>
+    <material id="Cola-Material">
+      <instance_effect url="#Cola-Effect"/>
+    </material>
+    <material id="AletaIzq-Material">
+      <instance_effect url="#AletaIzq-Effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Cuerpo-Geom" name="Cuerpo-Geom">
+      <mesh>
+        <source id="Cuerpo-Pos">
+          <float_array count="168" id="Cuerpo-Pos-array">-5.5 -1.5 3.0 -5.5 2.5 3.0 -5.5 2.5 -3.0 -5.5 -1.5 -3.0 -4.5 -2.5 3.0 -4.5 -1.5 3.0 -4.5 -1.5 -3.0 -4.5 -2.5 -3.0 4.5000005 -2.5 -3.0 4.5000005 -1.5 -3.0 4.5000005 -1.5 3.0 4.5000005 -2.5 3.0 5.5 -1.5 -3.0 5.5 2.5 -3.0 5.5 2.5 3.0 5.5 -1.5 3.0 -4.5 -2.5 -3.0 4.5000005 -2.5 -3.0 4.5000005 -2.5 3.0 -4.5 -2.5 3.0 -5.5 -1.5 -3.0 -4.5 -1.5 -3.0 -4.5 -1.5 3.0 -5.5 -1.5 3.0 4.5000005 -1.5 -3.0 5.5 -1.5 -3.0 5.5 -1.5 3.0 4.5000005 -1.5 3.0 -5.5 2.5 3.0 5.5 2.5 3.0 5.5 2.5 -3.0 -5.5 2.5 -3.0 -4.5 2.5 -3.0 4.5000005 2.5 -3.0 4.5000005 -2.5 -3.0 -4.5 -2.5 -3.0 -5.5 2.5 -3.0 -4.5 2.5 -3.0 -4.5 -1.5 -3.0 -5.5 -1.5 -3.0 4.5000005 2.5 -3.0 5.5 2.5 -3.0 5.5 -1.5 -3.0 4.5000005 -1.5 -3.0 -4.5 -2.5 3.0 4.5000005 -2.5 3.0 4.5000005 2.5 3.0 -4.5 2.5 3.0 -5.5 -1.5 3.0 -4.5 -1.5 3.0 -4.5 2.5 3.0 -5.5 2.5 3.0 4.5000005 -1.5 3.0 5.5 -1.5 3.0 5.5 2.5 3.0 4.5000005 2.5 3.0 </float_array>
+          <technique_common>
+            <accessor count="56" source="#Cuerpo-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cuerpo-UV">
+          <float_array count="112" id="Cuerpo-UV-array">0.625 0.8125 0.75 0.8125 0.75 1.0 0.625 1.0 0.40625 0.8125 0.4375 0.8125 0.4375 1.0 0.40625 1.0 0.40625 1.0 0.4375 1.0 0.4375 0.8125 0.40625 0.8125 0.4375 1.0 0.5625 1.0 0.5625 0.8125 0.4375 0.8125 0.0 0.3125 0.0 0.59375 0.1875 0.59375 0.1875 0.3125 0.40625 1.0 0.4375 1.0 0.4375 0.8125 0.40625 0.8125 0.40625 1.0 0.4375 1.0 0.4375 0.8125 0.40625 0.8125 0.1875 0.65625 0.1875 1.0 0.0 1.0 0.0 0.65625 0.5625 0.71875 0.5625 1.0 0.40625 1.0 0.40625 0.71875 0.25 0.875 0.28125 0.875 0.28125 1.0 0.25 1.0 0.25 0.6875 0.28125 0.6875 0.28125 0.8125 0.25 0.8125 0.40625 0.71875 0.40625 1.0 0.5625 1.0 0.5625 0.71875 0.25 1.0 0.28125 1.0 0.28125 0.875 0.25 0.875 0.25 0.8125 0.28125 0.8125 0.28125 0.6875 0.25 0.6875 </float_array>
+          <technique_common>
+            <accessor count="56" source="#Cuerpo-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cuerpo-Normal">
+          <float_array count="18" id="Cuerpo-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#Cuerpo-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Cuerpo-Vertices">
+          <input semantic="POSITION" source="#Cuerpo-Pos"/>
+        </vertices>
+        <polylist count="14" material="Cuerpo-Material">
+          <input offset="0" semantic="VERTEX" source="#Cuerpo-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#Cuerpo-UV"/>
+          <input offset="2" semantic="NORMAL" source="#Cuerpo-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 1 9 9 1 10 10 1 11 11 1 12 12 1 13 13 1 14 14 1 15 15 1 16 16 2 17 17 2 18 18 2 19 19 2 20 20 2 21 21 2 22 22 2 23 23 2 24 24 2 25 25 2 26 26 2 27 27 2 28 28 3 29 29 3 30 30 3 31 31 3 32 32 4 33 33 4 34 34 4 35 35 4 36 36 4 37 37 4 38 38 4 39 39 4 40 40 4 41 41 4 42 42 4 43 43 4 44 44 5 45 45 5 46 46 5 47 47 5 48 48 5 49 49 5 50 50 5 51 51 5 52 52 5 53 53 5 54 54 5 55 55 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Cabeza-Geom" name="Cabeza-Geom">
+      <mesh>
+        <source id="Cabeza-Pos">
+          <float_array count="408" id="Cabeza-Pos-array">-4.0 -1.5 1.0 -4.0 0.5 1.0 -4.0 0.5 -1.0 -4.0 -1.5 -1.0 -3.0 -1.5 -1.0 -3.0 0.5 -1.0 -3.0 0.5 -2.0 -3.0 -1.5 -2.0 -3.0 -1.5 2.0 -3.0 0.5 2.0 -3.0 0.5 1.0 -3.0 -1.5 1.0 -1.0 0.5 3.0 -1.0 2.5 3.0 -1.0 2.5 -3.0 -1.0 0.5 -3.0 -1.0 -2.5 3.0 -1.0 -1.5 3.0 -1.0 -1.5 -2.0 -1.0 -2.5 -2.0 -1.0 -2.5 -2.0 -1.0 0.5 -2.0 -1.0 0.5 -3.0 -1.0 -2.5 -3.0 -1.0 -1.5 3.0 -1.0 0.5 3.0 -1.0 0.5 2.0 -1.0 -1.5 2.0 0.0 1.5 -3.0 0.0 2.5 -3.0 0.0 2.5 -4.0 0.0 1.5 -4.0 0.0 1.5 4.0 0.0 2.5 4.0 0.0 2.5 3.0 0.0 1.5 3.0 2.0 1.5 -4.0 2.0 2.5 -4.0 2.0 2.5 -3.0 2.0 1.5 -3.0 2.0 1.5 3.0 2.0 2.5 3.0 2.0 2.5 4.0 2.0 1.5 4.0 4.0 -2.5 -3.0 4.0 2.5 -3.0 4.0 2.5 3.0 4.0 -2.5 3.0 -1.0 -2.5 -3.0 4.0 -2.5 -3.0 4.0 -2.5 3.0 -1.0 -2.5 3.0 -3.0 -1.5 -2.0 -1.0 -1.5 -2.0 -1.0 -1.5 2.0 -3.0 -1.5 2.0 -4.0 -1.5 -1.0 -3.0 -1.5 -1.0 -3.0 -1.5 1.0 -4.0 -1.5 1.0 0.0 1.5 -4.0 2.0 1.5 -4.0 2.0 1.5 -3.0 0.0 1.5 -3.0 0.0 1.5 3.0 2.0 1.5 3.0 2.0 1.5 4.0 0.0 1.5 4.0 -3.0 0.5 2.0 -1.0 0.5 2.0 -1.0 0.5 -2.0 -3.0 0.5 -2.0 -4.0 0.5 1.0 -3.0 0.5 1.0 -3.0 0.5 -1.0 -4.0 0.5 -1.0 -1.0 2.5 3.0 4.0 2.5 3.0 4.0 2.5 -3.0 -1.0 2.5 -3.0 0.0 2.5 -3.0 2.0 2.5 -3.0 2.0 2.5 -4.0 0.0 2.5 -4.0 0.0 2.5 4.0 2.0 2.5 4.0 2.0 2.5 3.0 0.0 2.5 3.0 0.0 2.5 -4.0 2.0 2.5 -4.0 2.0 1.5 -4.0 0.0 1.5 -4.0 -1.0 1.5 -3.0 4.0 1.5 -3.0 4.0 -2.5 -3.0 -1.0 -2.5 -3.0 2.0 2.5 -3.0 4.0 2.5 -3.0 4.0 1.5 -3.0 2.0 1.5 -3.0 -1.0 2.5 -3.0 0.0 2.5 -3.0 0.0 1.5 -3.0 -1.0 1.5 -3.0 -3.0 0.5 -2.0 -1.0 0.5 -2.0 -1.0 -1.5 -2.0 -3.0 -1.5 -2.0 -4.0 0.5 -1.0 -3.0 0.5 -1.0 -3.0 -1.5 -1.0 -4.0 -1.5 -1.0 -4.0 -1.5 1.0 -3.0 -1.5 1.0 -3.0 0.5 1.0 -4.0 0.5 1.0 -3.0 -1.5 2.0 -1.0 -1.5 2.0 -1.0 0.5 2.0 -3.0 0.5 2.0 -1.0 -2.5 3.0 4.0 -2.5 3.0 4.0 1.5 3.0 -1.0 1.5 3.0 2.0 1.5 3.0 4.0 1.5 3.0 4.0 2.5 3.0 2.0 2.5 3.0 -1.0 1.5 3.0 0.0 1.5 3.0 0.0 2.5 3.0 -1.0 2.5 3.0 0.0 1.5 4.0 2.0 1.5 4.0 2.0 2.5 4.0 0.0 2.5 4.0 </float_array>
+          <technique_common>
+            <accessor count="136" source="#Cabeza-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cabeza-UV">
+          <float_array count="272" id="Cabeza-UV-array">0.0 0.9375 0.0625 0.9375 0.0625 1.0 0.0 1.0 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.3125 0.8125 0.375 0.8125 0.375 1.0 0.3125 1.0 0.3125 0.84375 0.34375 0.84375 0.34375 1.0 0.3125 1.0 0.34375 0.90625 0.34375 1.0 0.3125 1.0 0.3125 0.90625 0.34375 0.9375 0.34375 1.0 0.3125 1.0 0.3125 0.9375 0.125 0.96875 0.15625 0.96875 0.15625 1.0 0.125 1.0 0.125 0.96875 0.15625 0.96875 0.15625 1.0 0.125 1.0 0.125 1.0 0.15625 1.0 0.15625 0.96875 0.125 0.96875 0.125 1.0 0.15625 1.0 0.15625 0.96875 0.125 0.96875 0.3125 1.0 0.46875 1.0 0.46875 0.8125 0.3125 0.8125 0.3125 1.0 0.46875 1.0 0.46875 0.8125 0.3125 0.8125 0.0 1.0 0.0625 1.0 0.0625 0.875 0.0 0.875 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.125 0.9375 0.125 1.0 0.15625 1.0 0.15625 0.9375 0.125 0.9375 0.125 1.0 0.15625 1.0 0.15625 0.9375 0.0 0.875 0.0625 0.875 0.0625 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.3125 0.8125 0.46875 0.8125 0.46875 1.0 0.3125 1.0 0.03125 0.75 0.03125 0.8125 0.0 0.8125 0.0 0.75 0.15625 0.9375 0.15625 1.0 0.125 1.0 0.125 0.9375 0.15625 0.9375 0.15625 1.0 0.125 1.0 0.125 0.9375 0.125 0.53125 0.125 0.6875 0.0 0.6875 0.0 0.53125 0.34375 0.9375 0.34375 1.0 0.3125 1.0 0.3125 0.9375 0.3125 0.96875 0.34375 0.96875 0.34375 1.0 0.3125 1.0 0.0 0.9375 0.0625 0.9375 0.0625 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.0625 1.0 0.0625 0.9375 0.0 0.9375 0.0 0.53125 0.0 0.6875 0.125 0.6875 0.125 0.53125 0.3125 0.9375 0.3125 1.0 0.34375 1.0 0.34375 0.9375 0.3125 1.0 0.34375 1.0 0.34375 0.96875 0.3125 0.96875 0.125 0.9375 0.125 1.0 0.15625 1.0 0.15625 0.9375 </float_array>
+          <technique_common>
+            <accessor count="136" source="#Cabeza-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cabeza-Normal">
+          <float_array count="18" id="Cabeza-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#Cabeza-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Cabeza-Vertices">
+          <input semantic="POSITION" source="#Cabeza-Pos"/>
+        </vertices>
+        <polylist count="34" material="Cabeza-Material">
+          <input offset="0" semantic="VERTEX" source="#Cabeza-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#Cabeza-UV"/>
+          <input offset="2" semantic="NORMAL" source="#Cabeza-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 0 9 9 0 10 10 0 11 11 0 12 12 0 13 13 0 14 14 0 15 15 0 16 16 0 17 17 0 18 18 0 19 19 0 20 20 0 21 21 0 22 22 0 23 23 0 24 24 0 25 25 0 26 26 0 27 27 0 28 28 0 29 29 0 30 30 0 31 31 0 32 32 0 33 33 0 34 34 0 35 35 0 36 36 1 37 37 1 38 38 1 39 39 1 40 40 1 41 41 1 42 42 1 43 43 1 44 44 1 45 45 1 46 46 1 47 47 1 48 48 2 49 49 2 50 50 2 51 51 2 52 52 2 53 53 2 54 54 2 55 55 2 56 56 2 57 57 2 58 58 2 59 59 2 60 60 2 61 61 2 62 62 2 63 63 2 64 64 2 65 65 2 66 66 2 67 67 2 68 68 3 69 69 3 70 70 3 71 71 3 72 72 3 73 73 3 74 74 3 75 75 3 76 76 3 77 77 3 78 78 3 79 79 3 80 80 3 81 81 3 82 82 3 83 83 3 84 84 3 85 85 3 86 86 3 87 87 3 88 88 4 89 89 4 90 90 4 91 91 4 92 92 4 93 93 4 94 94 4 95 95 4 96 96 4 97 97 4 98 98 4 99 99 4 100 100 4 101 101 4 102 102 4 103 103 4 104 104 4 105 105 4 106 106 4 107 107 4 108 108 4 109 109 4 110 110 4 111 111 4 112 112 5 113 113 5 114 114 5 115 115 5 116 116 5 117 117 5 118 118 5 119 119 5 120 120 5 121 121 5 122 122 5 123 123 5 124 124 5 125 125 5 126 126 5 127 127 5 128 128 5 129 129 5 130 130 5 131 131 5 132 132 5 133 133 5 134 134 5 135 135 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="AletaDer-Geom" name="AletaDer-Geom">
+      <mesh>
+        <source id="AletaDer-Pos">
+          <float_array count="120" id="AletaDer-Pos-array">-2.0 -0.5 4.0 -2.0 0.5 4.0 -2.0 0.5 -4.0 -2.0 -0.5 -4.0 1.0 -0.5 3.0 1.0 0.5 3.0 1.0 0.5 4.0 1.0 -0.5 4.0 2.0 -0.5 -4.0 2.0 0.5 -4.0 2.0 0.5 3.0 2.0 -0.5 3.0 -2.0 -0.5 -4.0 2.0 -0.5 -4.0 2.0 -0.5 3.0 -2.0 -0.5 3.0 -2.0 -0.5 3.0 1.0 -0.5 3.0 1.0 -0.5 4.0 -2.0 -0.5 4.0 -2.0 0.5 3.0 2.0 0.5 3.0 2.0 0.5 -4.0 -2.0 0.5 -4.0 -2.0 0.5 4.0 1.0 0.5 4.0 1.0 0.5 3.0 -2.0 0.5 3.0 -2.0 0.5 -4.0 2.0 0.5 -4.0 2.0 -0.5 -4.0 -2.0 -0.5 -4.0 1.0 -0.5 3.0 2.0 -0.5 3.0 2.0 0.5 3.0 1.0 0.5 3.0 -2.0 -0.5 4.0 1.0 -0.5 4.0 1.0 0.5 4.0 -2.0 0.5 4.0 </float_array>
+          <technique_common>
+            <accessor count="40" source="#AletaDer-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="AletaDer-UV">
+          <float_array count="80" id="AletaDer-UV-array">0.1875 0.5 0.21875 0.5 0.21875 1.0 0.1875 1.0 0.09375 1.0 0.125 1.0 0.125 0.9375 0.09375 0.9375 0.09375 1.0 0.125 1.0 0.125 0.5625 0.09375 0.5625 0.0 1.0 0.125 1.0 0.125 0.5625 0.0 0.5625 0.03125 0.5625 0.03125 0.75 0.0625 0.75 0.0625 0.5625 0.0 0.5625 0.125 0.5625 0.125 1.0 0.0 1.0 0.0625 0.5625 0.0625 0.75 0.03125 0.75 0.03125 0.5625 0.34375 0.75 0.34375 1.0 0.3125 1.0 0.3125 0.75 0.09375 1.0 0.125 1.0 0.125 0.9375 0.09375 0.9375 0.09375 0.8125 0.09375 1.0 0.125 1.0 0.125 0.8125 </float_array>
+          <technique_common>
+            <accessor count="40" source="#AletaDer-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="AletaDer-Normal">
+          <float_array count="18" id="AletaDer-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#AletaDer-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="AletaDer-Vertices">
+          <input semantic="POSITION" source="#AletaDer-Pos"/>
+        </vertices>
+        <polylist count="10" material="AletaDer-Material">
+          <input offset="0" semantic="VERTEX" source="#AletaDer-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#AletaDer-UV"/>
+          <input offset="2" semantic="NORMAL" source="#AletaDer-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 1 5 5 1 6 6 1 7 7 1 8 8 1 9 9 1 10 10 1 11 11 1 12 12 2 13 13 2 14 14 2 15 15 2 16 16 2 17 17 2 18 18 2 19 19 2 20 20 3 21 21 3 22 22 3 23 23 3 24 24 3 25 25 3 26 26 3 27 27 3 28 28 4 29 29 4 30 30 4 31 31 4 32 32 5 33 33 5 34 34 5 35 35 5 36 36 5 37 37 5 38 38 5 39 39 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Cola-Geom" name="Cola-Geom">
+      <mesh>
+        <source id="Cola-Pos">
+          <float_array count="312" id="Cola-Pos-array">-2.0 -0.5 2.0 -2.0 0.5 2.0 -2.0 0.5 -2.0 -2.0 -0.5 -2.0 0.0 -0.5 -1.0 0.0 0.5 -1.0 0.0 0.5 -2.0 0.0 -0.5 -2.0 0.0 -0.5 2.0 0.0 0.5 2.0 0.0 0.5 1.0 0.0 -0.5 1.0 -1.0 -0.5 -2.0 -1.0 0.5 -2.0 -1.0 0.5 -1.0 -1.0 -0.5 -1.0 -1.0 -0.5 1.0 -1.0 0.5 1.0 -1.0 0.5 2.0 -1.0 -0.5 2.0 1.0 -0.5 -2.0 1.0 0.5 -2.0 1.0 0.5 -1.0 1.0 -0.5 -1.0 1.0 -0.5 1.0 1.0 0.5 1.0 1.0 0.5 2.0 1.0 -0.5 2.0 2.0 -0.5 -1.0 2.0 0.5 -1.0 2.0 0.5 1.0 2.0 -0.5 1.0 -2.0 -0.5 -1.0 2.0 -0.5 -1.0 2.0 -0.5 1.0 -2.0 -0.5 1.0 -2.0 -0.5 -2.0 -1.0 -0.5 -2.0 -1.0 -0.5 -1.0 -2.0 -0.5 -1.0 0.0 -0.5 -2.0 1.0 -0.5 -2.0 1.0 -0.5 -1.0 0.0 -0.5 -1.0 -2.0 -0.5 1.0 -1.0 -0.5 1.0 -1.0 -0.5 2.0 -2.0 -0.5 2.0 0.0 -0.5 1.0 1.0 -0.5 1.0 1.0 -0.5 2.0 0.0 -0.5 2.0 -2.0 0.5 1.0 2.0 0.5 1.0 2.0 0.5 -1.0 -2.0 0.5 -1.0 -2.0 0.5 -1.0 -1.0 0.5 -1.0 -1.0 0.5 -2.0 -2.0 0.5 -2.0 0.0 0.5 -1.0 1.0 0.5 -1.0 1.0 0.5 -2.0 0.0 0.5 -2.0 -2.0 0.5 2.0 -1.0 0.5 2.0 -1.0 0.5 1.0 -2.0 0.5 1.0 0.0 0.5 2.0 1.0 0.5 2.0 1.0 0.5 1.0 0.0 0.5 1.0 -2.0 0.5 -2.0 -1.0 0.5 -2.0 -1.0 -0.5 -2.0 -2.0 -0.5 -2.0 0.0 0.5 -2.0 1.0 0.5 -2.0 1.0 -0.5 -2.0 0.0 -0.5 -2.0 -1.0 0.5 -1.0 0.0 0.5 -1.0 0.0 -0.5 -1.0 -1.0 -0.5 -1.0 1.0 0.5 -1.0 2.0 0.5 -1.0 2.0 -0.5 -1.0 1.0 -0.5 -1.0 -1.0 -0.5 1.0 0.0 -0.5 1.0 0.0 0.5 1.0 -1.0 0.5 1.0 1.0 -0.5 1.0 2.0 -0.5 1.0 2.0 0.5 1.0 1.0 0.5 1.0 -2.0 -0.5 2.0 -1.0 -0.5 2.0 -1.0 0.5 2.0 -2.0 0.5 2.0 0.0 -0.5 2.0 1.0 -0.5 2.0 1.0 0.5 2.0 0.0 0.5 2.0 </float_array>
+          <technique_common>
+            <accessor count="104" source="#Cola-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cola-UV">
+          <float_array count="208" id="Cola-UV-array">0.0 0.5 0.125 0.5 0.125 1.0 0.0 1.0 0.0 0.875 0.125 0.875 0.125 1.0 0.0 1.0 0.0 0.875 0.125 0.875 0.125 1.0 0.0 1.0 0.0 1.0 0.125 1.0 0.125 0.875 0.0 0.875 0.0 1.0 0.125 1.0 0.125 0.875 0.0 0.875 0.0 1.0 0.125 1.0 0.125 0.875 0.0 0.875 0.0 1.0 0.125 1.0 0.125 0.875 0.0 0.875 0.0 1.0 0.125 1.0 0.125 0.75 0.0 0.75 0.0 0.5 0.0 1.0 0.25 1.0 0.25 0.5 0.0 1.0 0.125 1.0 0.125 0.875 0.0 0.875 0.0 1.0 0.125 1.0 0.125 0.875 0.0 0.875 0.0 1.0 0.125 1.0 0.125 0.875 0.0 0.875 0.0 1.0 0.125 1.0 0.125 0.875 0.0 0.875 0.25 0.5 0.25 1.0 0.0 1.0 0.0 0.5 0.0 0.875 0.125 0.875 0.125 1.0 0.0 1.0 0.0 0.875 0.125 0.875 0.125 1.0 0.0 1.0 0.0 0.875 0.125 0.875 0.125 1.0 0.0 1.0 0.0 0.875 0.125 0.875 0.125 1.0 0.0 1.0 0.0 0.875 0.125 0.875 0.125 1.0 0.0 1.0 0.0 0.875 0.125 0.875 0.125 1.0 0.0 1.0 0.0 0.875 0.125 0.875 0.125 1.0 0.0 1.0 0.0 0.875 0.125 0.875 0.125 1.0 0.0 1.0 0.0 1.0 0.125 1.0 0.125 0.875 0.0 0.875 0.0 1.0 0.125 1.0 0.125 0.875 0.0 0.875 0.0 1.0 0.125 1.0 0.125 0.875 0.0 0.875 0.0 1.0 0.125 1.0 0.125 0.875 0.0 0.875 </float_array>
+          <technique_common>
+            <accessor count="104" source="#Cola-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cola-Normal">
+          <float_array count="18" id="Cola-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#Cola-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Cola-Vertices">
+          <input semantic="POSITION" source="#Cola-Pos"/>
+        </vertices>
+        <polylist count="26" material="Cola-Material">
+          <input offset="0" semantic="VERTEX" source="#Cola-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#Cola-UV"/>
+          <input offset="2" semantic="NORMAL" source="#Cola-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 0 9 9 0 10 10 0 11 11 0 12 12 1 13 13 1 14 14 1 15 15 1 16 16 1 17 17 1 18 18 1 19 19 1 20 20 1 21 21 1 22 22 1 23 23 1 24 24 1 25 25 1 26 26 1 27 27 1 28 28 1 29 29 1 30 30 1 31 31 1 32 32 2 33 33 2 34 34 2 35 35 2 36 36 2 37 37 2 38 38 2 39 39 2 40 40 2 41 41 2 42 42 2 43 43 2 44 44 2 45 45 2 46 46 2 47 47 2 48 48 2 49 49 2 50 50 2 51 51 2 52 52 3 53 53 3 54 54 3 55 55 3 56 56 3 57 57 3 58 58 3 59 59 3 60 60 3 61 61 3 62 62 3 63 63 3 64 64 3 65 65 3 66 66 3 67 67 3 68 68 3 69 69 3 70 70 3 71 71 3 72 72 4 73 73 4 74 74 4 75 75 4 76 76 4 77 77 4 78 78 4 79 79 4 80 80 4 81 81 4 82 82 4 83 83 4 84 84 4 85 85 4 86 86 4 87 87 4 88 88 5 89 89 5 90 90 5 91 91 5 92 92 5 93 93 5 94 94 5 95 95 5 96 96 5 97 97 5 98 98 5 99 99 5 100 100 5 101 101 5 102 102 5 103 103 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="AletaIzq-Geom" name="AletaIzq-Geom">
+      <mesh>
+        <source id="AletaIzq-Pos">
+          <float_array count="120" id="AletaIzq-Pos-array">-2.0 -0.5 4.0 -2.0 0.5 4.0 -2.0 0.5 -4.0 -2.0 -0.5 -4.0 1.0 -0.5 -4.0 1.0 0.5 -4.0 1.0 0.5 -3.0 1.0 -0.5 -3.0 2.0 -0.5 -3.0 2.0 0.5 -3.0 2.0 0.5 4.0 2.0 -0.5 4.0 -2.0 -0.5 -3.0 2.0 -0.5 -3.0 2.0 -0.5 4.0 -2.0 -0.5 4.0 -2.0 -0.5 -4.0 1.0 -0.5 -4.0 1.0 -0.5 -3.0 -2.0 -0.5 -3.0 -2.0 0.5 4.0 2.0 0.5 4.0 2.0 0.5 -3.0 -2.0 0.5 -3.0 -2.0 0.5 -3.0 1.0 0.5 -3.0 1.0 0.5 -4.0 -2.0 0.5 -4.0 -2.0 0.5 -4.0 1.0 0.5 -4.0 1.0 -0.5 -4.0 -2.0 -0.5 -4.0 1.0 0.5 -3.0 2.0 0.5 -3.0 2.0 -0.5 -3.0 1.0 -0.5 -3.0 -2.0 -0.5 4.0 2.0 -0.5 4.0 2.0 0.5 4.0 -2.0 0.5 4.0 </float_array>
+          <technique_common>
+            <accessor count="40" source="#AletaIzq-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="AletaIzq-UV">
+          <float_array count="80" id="AletaIzq-UV-array">0.375 0.5 0.4375 0.5 0.4375 1.0 0.375 1.0 0.0 1.0 0.0625 1.0 0.0625 0.9375 0.0 0.9375 0.1875 1.0 0.25 1.0 0.25 0.5625 0.1875 0.5625 0.0 1.0 0.25 1.0 0.25 0.5625 0.0 0.5625 0.0625 0.8125 0.0625 1.0 0.125 1.0 0.125 0.8125 0.0 0.5625 0.25 0.5625 0.25 1.0 0.0 1.0 0.125 0.8125 0.125 1.0 0.0625 1.0 0.0625 0.8125 0.125 0.8125 0.125 1.0 0.0625 1.0 0.0625 0.8125 0.0 0.9375 0.0625 0.9375 0.0625 1.0 0.0 1.0 0.0 0.75 0.0 1.0 0.0625 1.0 0.0625 0.75 </float_array>
+          <technique_common>
+            <accessor count="40" source="#AletaIzq-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="AletaIzq-Normal">
+          <float_array count="18" id="AletaIzq-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#AletaIzq-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="AletaIzq-Vertices">
+          <input semantic="POSITION" source="#AletaIzq-Pos"/>
+        </vertices>
+        <polylist count="10" material="AletaIzq-Material">
+          <input offset="0" semantic="VERTEX" source="#AletaIzq-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#AletaIzq-UV"/>
+          <input offset="2" semantic="NORMAL" source="#AletaIzq-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 1 5 5 1 6 6 1 7 7 1 8 8 1 9 9 1 10 10 1 11 11 1 12 12 2 13 13 2 14 14 2 15 15 2 16 16 2 17 17 2 18 18 2 19 19 2 20 20 3 21 21 3 22 22 3 23 23 3 24 24 3 25 25 3 26 26 3 27 27 3 28 28 4 29 29 4 30 30 4 31 31 4 32 32 4 33 33 4 34 34 4 35 35 4 36 36 5 37 37 5 38 38 5 39 39 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations>
+    <animation id="Body-global-anim" name="Body-global-anim">
+      <animation>
+        <source id="Body-global-anim-inSource-TIME">
+          <float_array count="25" id="Body-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Body-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Body-global-anim-interpolation">
+          <Name_array count="25" id="Body-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#Body-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Body-global-anim-outSource-global">
+          <float_array count="400" id="Body-global-anim-outSource-global-array">9.649992E-5 0.0 1.0 0.0 0.0 1.0 0.0 0.0 -1.0 0.0 9.649992E-5 0.0 0.0 0.0 0.0 1.0 9.649992E-5 1.3834797E-6 1.0 0.0 -0.0145439 0.99989426 2.0023435E-8 0.16666667 -0.99989426 -0.0145439 9.649992E-5 0.0 0.0 0.0 0.0 1.0 9.647012E-5 2.7669594E-6 1.0000001 0.0 -0.02908473 0.99957716 4.004687E-8 0.33333334 -0.9995771 -0.02908473 9.652972E-5 0.0 0.0 0.0 0.0 1.0 9.652972E-5 4.1499734E-6 1.0000002 0.0 -0.043619405 0.99904835 6.3329935E-8 0.5 -0.9990484 -0.043619405 9.664893E-5 0.0 0.0 0.0 0.0 1.0 9.641051E-5 5.5301934E-6 1.0 0.0 -0.058144853 0.9983082 8.568168E-8 0.6666667 -0.9983082 -0.05814485 9.658933E-5 0.0 0.0 0.0 0.0 1.0 9.62615E-5 6.9104135E-6 1.0 0.0 -0.07265799 0.99735695 1.0058284E-7 0.8333333 -0.99735695 -0.07265799 9.649992E-5 0.0 0.0 0.0 0.0 1.0 9.614229E-5 8.288771E-6 1.0 0.0 -0.087155774 0.9961947 1.2293458E-7 1.0 -0.9961947 -0.087155774 9.649992E-5 0.0 0.0 0.0 0.0 1.0 9.635091E-5 6.891787E-6 1.0000001 0.0 -0.07265783 0.997357 1.2665987E-7 1.1666666 -0.997357 -0.07265783 9.658933E-5 0.0 0.0 0.0 0.0 1.0 9.635091E-5 5.479902E-6 1.0000001 0.0 -0.058144495 0.9983083 1.2852252E-7 1.3333334 -0.99830824 -0.058144495 9.647012E-5 0.0 0.0 0.0 0.0 1.0 9.6440315E-5 4.0773302E-6 1.0 0.0 -0.043618865 0.9990483 1.3411045E-7 1.5 -0.9990483 -0.04361886 9.6559525E-5 0.0 0.0 0.0 0.0 1.0 9.638071E-5 2.6682392E-6 1.0000001 0.0 -0.029084008 0.99957705 1.3690442E-7 1.6666666 -0.99957705 -0.029084008 9.6440315E-5 0.0 0.0 0.0 0.0 1.0 9.6440315E-5 1.2596138E-6 0.9999999 0.0 -0.014543004 0.9998942 1.4295802E-7 1.8333334 -0.99989414 -0.014543004 9.6440315E-5 0.0 0.0 0.0 0.0 1.0 9.6440315E-5 -1.462488E-7 1.0000001 0.0 1.0760689E-6 1.0000001 1.4614503E-7 2.0 -1.0000001 1.0760548E-6 9.6440315E-5 0.0 0.0 0.0 0.0 1.0 9.635091E-5 -1.5529804E-6 1.0 0.0 0.014545156 0.99989426 1.5133992E-7 1.8333334 -0.99989426 0.014545156 9.641051E-5 0.0 0.0 0.0 0.0 1.0 9.638071E-5 -2.9616058E-6 1.0000001 0.0 0.029086169 0.999577 1.5646219E-7 1.6666666 -0.99957705 0.029086169 9.6440315E-5 0.0 0.0 0.0 0.0 1.0 9.635091E-5 -4.3697655E-6 1.0 0.0 0.04362103 0.9990481 1.6018748E-7 1.5 -0.9990482 0.04362103 9.647012E-5 0.0 0.0 0.0 0.0 1.0 9.62317E-5 -5.7760626E-6 1.0000001 0.0 0.058146633 0.99830806 1.6950071E-7 1.3333333 -0.9983081 0.058146633 9.641051E-5 0.0 0.0 0.0 0.0 1.0 9.6172094E-5 -7.174909E-6 1.0000001 0.0 0.072659984 0.9973568 1.6763806E-7 1.1666667 -0.99735683 0.072659984 9.641051E-5 0.0 0.0 0.0 0.0 1.0 9.599328E-5 -8.579344E-6 1.0000001 0.0 0.08715792 0.9961946 1.7881393E-7 1.0 -0.9961946 0.08715792 9.635091E-5 0.0 0.0 0.0 0.0 1.0 9.6172094E-5 -7.1823597E-6 1.0 0.0 0.072659776 0.9973568 1.7881393E-7 0.8333334 -0.99735683 0.072659776 9.641051E-5 0.0 0.0 0.0 0.0 1.0 9.62317E-5 -5.785376E-6 1.0 0.0 0.058146268 0.9983082 1.8067658E-7 0.6666666 -0.9983081 0.058146268 9.641051E-5 0.0 0.0 0.0 0.0 1.0 9.62913E-5 -4.382804E-6 1.0000001 0.0 0.04362046 0.99904823 1.7881393E-7 0.5 -0.9990483 0.043620456 9.635091E-5 0.0 0.0 0.0 0.0 1.0 9.641051E-5 -2.9848889E-6 1.0000001 0.0 0.02908542 0.99957705 1.7974526E-7 0.33333337 -0.99957705 0.02908542 9.641051E-5 0.0 0.0 0.0 0.0 1.0 9.6559525E-5 -1.582317E-6 1.0000001 0.0 0.014544236 0.9998943 1.7741695E-7 0.16666663 -0.9998943 0.014544236 9.6559525E-5 0.0 0.0 0.0 0.0 1.0 9.649992E-5 -1.1919455E-7 1.0 0.0 -4.1235594E-8 1.0 1.1919853E-7 0.0 -1.0 -4.12471E-8 9.649992E-5 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Body-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Body-global-anim-globalSampler">
+          <input semantic="INPUT" source="#Body-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Body-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#Body-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#Body-global-anim-globalSampler" target="Body-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Body-local-anim" name="Body-local-anim">
+      <animation>
+        <source id="Body-local-anim-inSource-TIME">
+          <float_array count="25" id="Body-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Body-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Body-local-anim-interpolation">
+          <Name_array count="25" id="Body-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#Body-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Body-local-anim-outSource-local">
+          <float_array count="400" id="Body-local-anim-outSource-local-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Body-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Body-local-anim-localSampler">
+          <input semantic="INPUT" source="#Body-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Body-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#Body-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#Body-local-anim-localSampler" target="Body-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Cuerpo-global-anim" name="Cuerpo-global-anim">
+      <animation>
+        <source id="Cuerpo-global-anim-inSource-TIME">
+          <float_array count="25" id="Cuerpo-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cuerpo-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cuerpo-global-anim-interpolation">
+          <Name_array count="25" id="Cuerpo-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#Cuerpo-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cuerpo-global-anim-outSource-global">
+          <float_array count="400" id="Cuerpo-global-anim-outSource-global-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cuerpo-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Cuerpo-global-anim-globalSampler">
+          <input semantic="INPUT" source="#Cuerpo-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Cuerpo-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#Cuerpo-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#Cuerpo-global-anim-globalSampler" target="Cuerpo-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Cuerpo-local-anim" name="Cuerpo-local-anim">
+      <animation>
+        <source id="Cuerpo-local-anim-inSource-TIME">
+          <float_array count="25" id="Cuerpo-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cuerpo-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cuerpo-local-anim-interpolation">
+          <Name_array count="25" id="Cuerpo-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#Cuerpo-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cuerpo-local-anim-outSource-local">
+          <float_array count="400" id="Cuerpo-local-anim-outSource-local-array">1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cuerpo-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Cuerpo-local-anim-localSampler">
+          <input semantic="INPUT" source="#Cuerpo-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Cuerpo-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#Cuerpo-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#Cuerpo-local-anim-localSampler" target="Cuerpo-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Cabeza-global-anim" name="Cabeza-global-anim">
+      <animation>
+        <source id="Cabeza-global-anim-inSource-TIME">
+          <float_array count="25" id="Cabeza-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cabeza-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cabeza-global-anim-interpolation">
+          <Name_array count="25" id="Cabeza-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#Cabeza-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cabeza-global-anim-outSource-global">
+          <float_array count="400" id="Cabeza-global-anim-outSource-global-array">1.0 0.0 0.0 -3.0 0.0 1.0 0.0 5.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.999577 0.029084716 0.0 -3.0 -0.029084716 0.999577 0.0 5.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.99830836 0.058144838 0.0 -3.0 -0.058144838 0.99830836 0.0 5.0 0.0 0.0 1.0000002 0.0 0.0 0.0 0.0 1.0 0.9961947 0.08715573 0.0 -3.0 -0.08715573 0.9961947 0.0 5.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.9932385 0.11609291 0.0 -3.0 -0.11609291 0.9932385 0.0 5.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.9894417 0.14493184 0.0 -3.0 -0.14493184 0.9894417 0.0 5.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.9848078 0.17364816 0.0 -3.0 -0.17364816 0.9848078 0.0 5.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.9894417 0.14493182 0.0 -3.0 -0.14493182 0.9894417 0.0 5.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.9932384 0.11609283 0.0 -3.0 -0.11609283 0.9932384 0.0 5.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.9961947 0.08715562 0.0 -3.0 -0.08715562 0.9961947 0.0 5.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.99830836 0.05814468 0.0 -3.0 -0.05814468 0.99830836 0.0 5.0 0.0 0.0 1.0000002 0.0 0.0 0.0 0.0 1.0 0.999577 0.029084535 0.0 -3.0 -0.029084535 0.999577 0.0 5.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 -2.4586916E-7 0.0 -3.0 2.4586916E-7 1.0 0.0 5.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.999577 -0.029084975 0.0 -3.0 0.029084975 0.999577 0.0 5.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.99830824 -0.05814515 0.0 -3.0 0.05814515 0.99830824 0.0 5.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.9961947 -0.08715609 0.0 -3.0 0.08715609 0.9961947 0.0 5.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.9932384 -0.11609327 0.0 -3.0 0.11609327 0.9932384 0.0 5.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.9894417 -0.14493228 0.0 -3.0 0.14493228 0.9894417 0.0 5.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.98480767 -0.17364861 0.0 -3.0 0.17364861 0.98480767 0.0 5.0 0.0 0.0 0.99999994 0.0 0.0 0.0 0.0 1.0 0.9894415 -0.14493239 0.0 -3.0 0.14493239 0.9894415 0.0 5.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.9932384 -0.116093576 0.0 -3.0 0.116093576 0.9932384 0.0 5.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.99619466 -0.0871565 0.0 -3.0 0.0871565 0.99619466 0.0 5.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.99830806 -0.058145694 0.0 -3.0 0.058145694 0.99830806 0.0 5.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.999577 -0.029085688 0.0 -3.0 0.029085688 0.999577 0.0 5.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 1.0 -1.0728836E-6 0.0 -3.0 1.0728836E-6 1.0 0.0 5.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cabeza-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Cabeza-global-anim-globalSampler">
+          <input semantic="INPUT" source="#Cabeza-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Cabeza-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#Cabeza-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#Cabeza-global-anim-globalSampler" target="Cabeza-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Cabeza-local-anim" name="Cabeza-local-anim">
+      <animation>
+        <source id="Cabeza-local-anim-inSource-TIME">
+          <float_array count="25" id="Cabeza-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cabeza-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cabeza-local-anim-interpolation">
+          <Name_array count="25" id="Cabeza-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#Cabeza-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cabeza-local-anim-outSource-local">
+          <float_array count="400" id="Cabeza-local-anim-outSource-local-array">1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cabeza-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Cabeza-local-anim-localSampler">
+          <input semantic="INPUT" source="#Cabeza-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Cabeza-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#Cabeza-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#Cabeza-local-anim-localSampler" target="Cabeza-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="AletaDer-global-anim" name="AletaDer-global-anim">
+      <animation>
+        <source id="AletaDer-global-anim-inSource-TIME">
+          <float_array count="25" id="AletaDer-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#AletaDer-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="AletaDer-global-anim-interpolation">
+          <Name_array count="25" id="AletaDer-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#AletaDer-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="AletaDer-global-anim-outSource-global">
+          <float_array count="400" id="AletaDer-global-anim-outSource-global-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.0 0.0 0.0 1.0 3.0 0.0 0.0 0.0 1.0 0.99903363 0.007956264 0.043229938 0.0 -0.011058929 0.9973425 0.0720131 4.0 -0.042542093 -0.07242157 0.9964666 3.0 0.0 0.0 0.0 1.0 0.9961408 0.01275291 0.08683827 0.0 -0.025141362 0.98938847 0.14310224 4.0 -0.08409182 -0.1447332 0.98589087 3.0 0.0 0.0 0.0 1.0 0.99134284 0.014355616 0.13051291 0.0 -0.04214651 0.9761955 0.21275866 4.0 -0.124351814 -0.2164174 0.96834934 3.0 0.0 0.0 0.0 1.0 0.9846737 0.012752902 0.17394122 0.0 -0.061952654 0.9578576 0.28048372 4.0 -0.1630339 -0.28696102 0.943967 3.0 0.0 0.0 0.0 1.0 0.9761809 0.007956233 0.21681227 0.0 -0.084417984 0.9345058 0.3457926 4.0 -0.19986112 -0.35585898 0.9129183 3.0 0.0 0.0 0.0 1.0 0.9659258 -4.4703484E-8 0.25881937 0.0 -0.10938179 0.9063078 0.40821803 4.0 -0.23457003 -0.42261845 0.875426 3.0 0.0 0.0 0.0 1.0 0.9748569 0.026478104 0.22125348 0.0 -0.09602257 0.9459142 0.30988097 4.0 -0.20108172 -0.32333493 0.92467344 3.0 0.0 0.0 0.0 1.0 0.9823347 0.048647575 0.18069918 0.0 -0.08640004 0.9744423 0.20735846 4.0 -0.1659934 -0.2193078 0.9614315 3.0 0.0 0.0 0.0 1.0 0.98825806 0.06620893 0.13770422 0.0 -0.08064419 0.99150664 0.10203522 4.0 -0.12977901 -0.111942165 0.98520374 3.0 0.0 0.0 0.0 1.0 0.9925472 0.078924984 0.09284935 0.0 -0.078832775 0.996877 -0.0046661934 4.0 -0.09292766 -0.002688154 0.9956693 3.0 0.0 0.0 0.0 1.0 0.9951441 0.08662397 0.046740383 0.0 -0.080990225 0.9904807 -0.11130453 4.0 -0.05593708 0.10697853 0.9926866 3.0 0.0 0.0 0.0 1.0 0.99601376 0.08920191 1.1455268E-7 0.0 -0.08708745 0.97240424 -0.21643962 4.0 -0.019306935 0.21557678 0.9762962 3.0 0.0 0.0 0.0 1.0 0.995144 0.08662396 -0.0467401 0.0 -0.09704202 0.9428914 -0.3186511 4.0 0.016468018 0.3216395 0.946719 3.0 0.0 0.0 0.0 1.0 0.9925473 0.078925 -0.09284908 0.0 -0.11071956 0.9023414 -0.4165589 4.0 0.050904654 0.42373458 0.90435493 3.0 0.0 0.0 0.0 1.0 0.98825824 0.06620896 -0.13770397 0.0 -0.12793532 0.85130155 -0.5088404 4.0 0.0835378 0.52048284 0.8497761 3.0 0.0 0.0 0.0 1.0 0.9823347 0.048647612 -0.18069887 0.0 -0.1484567 0.7904612 -0.59424895 4.0 0.11392665 0.6105773 0.7837195 3.0 0.0 0.0 0.0 1.0 0.9748568 0.026478142 -0.22125316 0.0 -0.17200658 0.72064215 -0.67163116 4.0 0.14166081 0.6928013 0.7070774 3.0 0.0 0.0 0.0 1.0 0.96592593 1.4901161E-8 -0.2588191 0.0 -0.19826694 0.6427877 -0.73994213 4.0 0.16636573 0.76604444 0.62088525 3.0 0.0 0.0 0.0 1.0 0.97582865 0.01601743 -0.21794954 0.0 -0.15666321 0.7466022 -0.64656156 4.0 0.15236533 0.665078 0.7310651 3.0 0.0 0.0 0.0 1.0 0.9842599 0.02577696 -0.17483793 0.0 -0.1173645 0.83498925 -0.5376047 4.0 0.13212995 0.5496625 0.8248716 3.0 0.0 0.0 0.0 1.0 0.99102634 0.029055147 -0.13047113 0.0 -0.08127038 0.9059252 -0.41556555 4.0 0.106122755 0.4224398 0.90015703 3.0 0.0 0.0 0.0 1.0 0.9959733 0.025776954 -0.085864775 0.0 -0.04920712 0.9577865 -0.2832379 4.0 0.07493911 0.28632256 0.95519817 3.0 0.0 0.0 0.0 1.0 0.99898756 0.016017444 -0.042040017 0.0 -0.021908704 0.98938584 -0.14365101 4.0 0.039292876 0.14442661 0.9887351 3.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.0 0.0 0.0 1.0 3.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#AletaDer-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="AletaDer-global-anim-globalSampler">
+          <input semantic="INPUT" source="#AletaDer-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#AletaDer-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#AletaDer-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#AletaDer-global-anim-globalSampler" target="AletaDer-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="AletaDer-local-anim" name="AletaDer-local-anim">
+      <animation>
+        <source id="AletaDer-local-anim-inSource-TIME">
+          <float_array count="25" id="AletaDer-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#AletaDer-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="AletaDer-local-anim-interpolation">
+          <Name_array count="25" id="AletaDer-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#AletaDer-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="AletaDer-local-anim-outSource-local">
+          <float_array count="400" id="AletaDer-local-anim-outSource-local-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#AletaDer-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="AletaDer-local-anim-localSampler">
+          <input semantic="INPUT" source="#AletaDer-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#AletaDer-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#AletaDer-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#AletaDer-local-anim-localSampler" target="AletaDer-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Cola-global-anim" name="Cola-global-anim">
+      <animation>
+        <source id="Cola-global-anim-inSource-TIME">
+          <float_array count="25" id="Cola-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cola-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cola-global-anim-interpolation">
+          <Name_array count="25" id="Cola-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#Cola-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cola-global-anim-outSource-global">
+          <float_array count="400" id="Cola-global-anim-outSource-global-array">1.0 0.0 0.0 6.0 0.0 1.0 0.0 3.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.9973571 -0.072658025 0.0 6.0 0.072658025 0.9973571 0.0 3.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.9894418 -0.14493197 0.0 6.0 0.14493197 0.9894418 0.0 3.0 0.0 0.0 1.0000002 0.0 0.0 0.0 0.0 1.0 0.976296 -0.21643972 0.0 6.0 0.21643972 0.976296 0.0 3.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.95798945 -0.2868034 0.0 6.0 0.2868034 0.95798945 0.0 3.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.93461895 -0.35565096 0.0 6.0 0.35565096 0.93461895 0.0 3.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.90630776 -0.42261848 0.0 6.0 0.42261848 0.90630776 0.0 3.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.93461883 -0.35565093 0.0 6.0 0.35565093 0.93461883 0.0 3.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.95798945 -0.28680342 0.0 6.0 0.28680342 0.95798945 0.0 3.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.976296 -0.21643984 0.0 6.0 0.21643984 0.976296 0.0 3.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.9894418 -0.14493208 0.0 6.0 0.14493208 0.9894418 0.0 3.0 0.0 0.0 1.0000002 0.0 0.0 0.0 0.0 1.0 0.99735695 -0.07265818 0.0 6.0 0.07265818 0.99735695 0.0 3.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 -2.0861626E-7 0.0 6.0 2.0861626E-7 1.0 0.0 3.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.99830836 0.058144644 0.0 6.0 -0.058144644 0.99830836 0.0 3.0 0.0 0.0 1.0000002 0.0 0.0 0.0 0.0 1.0 0.9932384 0.11609272 0.0 6.0 -0.11609272 0.9932384 0.0 3.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.9848078 0.173648 0.0 6.0 -0.173648 0.9848078 0.0 3.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.97304493 0.23061572 0.0 6.0 -0.23061572 0.97304493 0.0 3.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.95798975 0.2868031 0.0 6.0 -0.2868031 0.95798975 0.0 3.0 0.0 0.0 1.0000002 0.0 0.0 0.0 0.0 1.0 0.9396927 0.34202 0.0 6.0 -0.34202 0.9396927 0.0 3.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.95798975 0.2868031 0.0 6.0 -0.2868031 0.95798975 0.0 3.0 0.0 0.0 1.0000002 0.0 0.0 0.0 0.0 1.0 0.97304505 0.23061566 0.0 6.0 -0.23061566 0.97304505 0.0 3.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.98480785 0.17364791 0.0 6.0 -0.17364791 0.98480785 0.0 3.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.99323845 0.11609258 0.0 6.0 -0.11609258 0.99323845 0.0 3.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.99830836 0.058144446 0.0 6.0 -0.058144446 0.99830836 0.0 3.0 0.0 0.0 1.0000002 0.0 0.0 0.0 0.0 1.0 1.0 -4.172325E-7 0.0 6.0 4.172325E-7 1.0 0.0 3.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cola-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Cola-global-anim-globalSampler">
+          <input semantic="INPUT" source="#Cola-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Cola-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#Cola-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#Cola-global-anim-globalSampler" target="Cola-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Cola-local-anim" name="Cola-local-anim">
+      <animation>
+        <source id="Cola-local-anim-inSource-TIME">
+          <float_array count="25" id="Cola-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cola-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cola-local-anim-interpolation">
+          <Name_array count="25" id="Cola-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#Cola-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cola-local-anim-outSource-local">
+          <float_array count="400" id="Cola-local-anim-outSource-local-array">1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cola-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Cola-local-anim-localSampler">
+          <input semantic="INPUT" source="#Cola-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Cola-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#Cola-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#Cola-local-anim-localSampler" target="Cola-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="AletaIzq-global-anim" name="AletaIzq-global-anim">
+      <animation>
+        <source id="AletaIzq-global-anim-inSource-TIME">
+          <float_array count="25" id="AletaIzq-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#AletaIzq-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="AletaIzq-global-anim-interpolation">
+          <Name_array count="25" id="AletaIzq-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#AletaIzq-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="AletaIzq-global-anim-outSource-global">
+          <float_array count="400" id="AletaIzq-global-anim-outSource-global-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 4.0 0.0 0.0 1.0 -3.0 0.0 0.0 0.0 1.0 0.99903363 0.007956266 -0.043229893 0.0 -0.011058928 0.9973425 -0.072013125 4.0 0.042542048 0.072421595 0.9964666 -3.0 0.0 0.0 0.0 1.0 0.9961409 0.0127529185 -0.08683818 0.0 -0.025141357 0.9893886 -0.14310229 4.0 0.08409173 0.14473325 0.985891 -3.0 0.0 0.0 0.0 1.0 0.9913427 0.014355627 -0.13051276 0.0 -0.042146496 0.9761954 -0.2127587 4.0 0.124351665 0.21641745 0.9683492 -3.0 0.0 0.0 0.0 1.0 0.98467356 0.0127529185 -0.17394102 0.0 -0.06195263 0.95785743 -0.2804838 4.0 0.1630337 0.28696105 0.9439669 -3.0 0.0 0.0 0.0 1.0 0.9761811 0.00795627 -0.21681206 0.0 -0.08441797 0.9345059 -0.34579274 4.0 0.19986089 0.35585913 0.91291845 -3.0 0.0 0.0 0.0 1.0 0.96592575 7.4505806E-9 -0.25881904 0.0 -0.10938171 0.90630764 -0.4082181 4.0 0.23456968 0.42261845 0.87542593 -3.0 0.0 0.0 0.0 1.0 0.975049 0.024681635 -0.22061367 0.0 -0.095583834 0.94363654 -0.31688166 4.0 0.20035796 0.3300622 0.922451 -3.0 0.0 0.0 0.0 1.0 0.9826677 0.045293123 -0.17975795 0.0 -0.08533445 0.9713652 -0.22173841 4.0 0.16456738 0.23323469 0.95839417 -3.0 0.0 0.0 0.0 1.0 0.9886902 0.061586868 -0.13674271 0.0 -0.07875671 0.98916036 -0.12393128 4.0 0.12762794 0.13329907 0.9828236 -3.0 0.0 0.0 0.0 1.0 0.9930446 0.07336712 -0.09208479 0.0 -0.07592966 0.9968088 -0.02463537 4.0 0.0899835 0.03145599 0.9954464 -3.0 0.0 0.0 0.0 1.0 0.99567837 0.08049237 -0.04632056 0.0 -0.07688723 0.99421823 0.07495655 4.0 0.05208618 -0.07107116 0.9961104 -3.0 0.0 0.0 0.0 1.0 0.9965599 0.082876995 1.1920929E-7 0.0 -0.08161794 0.9814199 0.17364798 4.0 0.014391306 -0.1730506 0.9848079 -3.0 0.0 0.0 0.0 1.0 0.9956783 0.08049237 0.046320748 0.0 -0.09006492 0.9585674 0.27025318 4.0 -0.022648241 -0.27325714 0.96167433 -3.0 0.0 0.0 0.0 1.0 0.9930448 0.07336714 0.09208498 0.0 -0.10212677 0.9259356 0.36361197 4.0 -0.05858759 -0.37048724 0.9269881 -3.0 0.0 0.0 0.0 1.0 0.98869044 0.061586894 0.13674293 0.0 -0.1176585 0.8839162 0.45260242 4.0 -0.0929949 -0.4635726 0.8811655 -3.0 0.0 0.0 0.0 1.0 0.98266757 0.04529315 0.17975809 0.0 -0.13647354 0.83301395 0.5361555 4.0 -0.12545682 -0.5513949 0.8247571 -3.0 0.0 0.0 0.0 1.0 0.975049 0.02468165 0.2206139 0.0 -0.15834597 0.7738407 0.61326784 4.0 -0.15558353 -0.63289946 0.75844073 -3.0 0.0 0.0 0.0 1.0 0.9659258 1.4901161E-8 0.25881925 0.0 -0.18301283 0.70710695 0.68301255 4.0 -0.18301287 -0.70710665 0.6830128 -3.0 0.0 0.0 0.0 1.0 0.975919 0.014391579 0.21765864 0.0 -0.1437315 0.793005 0.5920174 4.0 -0.16408429 -0.6090454 0.775977 -3.0 0.0 0.0 0.0 1.0 0.9843663 0.023136832 0.17460816 0.0 -0.107106395 0.86561555 0.4891199 4.0 -0.13982682 -0.5001747 0.85456073 -3.0 0.0 0.0 0.0 1.0 0.9911079 0.0260704 0.13048194 0.0 -0.0738301 0.92356557 0.37626565 4.0 -0.11069923 -0.38255334 0.9172779 -3.0 0.0 0.0 0.0 1.0 0.9960166 0.023136817 0.08611441 0.0 -0.044531867 0.96575946 0.25558883 4.0 -0.07725228 -0.25840557 0.9629427 -3.0 0.0 0.0 0.0 1.0 0.9989996 0.014391569 0.04234455 0.0 -0.019765744 0.99139935 0.12937148 4.0 -0.040118497 -0.13007902 0.99069184 -3.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 1.1920929E-7 4.0 0.0 -1.1920929E-7 1.0 -3.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#AletaIzq-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="AletaIzq-global-anim-globalSampler">
+          <input semantic="INPUT" source="#AletaIzq-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#AletaIzq-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#AletaIzq-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#AletaIzq-global-anim-globalSampler" target="AletaIzq-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="AletaIzq-local-anim" name="AletaIzq-local-anim">
+      <animation>
+        <source id="AletaIzq-local-anim-inSource-TIME">
+          <float_array count="25" id="AletaIzq-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#AletaIzq-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="AletaIzq-local-anim-interpolation">
+          <Name_array count="25" id="AletaIzq-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#AletaIzq-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="AletaIzq-local-anim-outSource-local">
+          <float_array count="400" id="AletaIzq-local-anim-outSource-local-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#AletaIzq-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="AletaIzq-local-anim-localSampler">
+          <input semantic="INPUT" source="#AletaIzq-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#AletaIzq-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#AletaIzq-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#AletaIzq-local-anim-localSampler" target="AletaIzq-local/matrix"/>
+      </animation>
+    </animation>
+  </library_animations>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="Root-global" name="Root-global" sid="Root-global">
+        <matrix sid="matrix">1.0 0.0 -8.742278E-8 0.0 0.0 1.0 0.0 0.0 -8.742278E-8 0.0 -1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+        <node id="Body-global" name="Body-global" sid="Body-global">
+          <matrix sid="matrix">9.599328E-5 -8.579344E-6 1.0000001 0.0 0.08715792 0.9961946 1.7881393E-7 1.0 -0.9961946 0.08715792 9.635091E-5 0.0 0.0 0.0 0.0 1.0 </matrix>
+          <node id="Cuerpo-global" name="Cuerpo-global" sid="Cuerpo-global">
+            <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+            <node id="Cuerpo-local" name="Cuerpo-local" sid="Cuerpo-local">
+              <matrix sid="matrix">1.0 0.0 0.0 0.49999985 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+              <instance_geometry url="#Cuerpo-Geom">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="Cuerpo-Material" target="#Cuerpo-Material">
+                      <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="Cuerpo-tex-bind"/>
+                    </instance_material>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+            <node id="Cabeza-global" name="Cabeza-global" sid="Cabeza-global">
+              <matrix sid="matrix">0.98480767 -0.17364861 0.0 -3.0 0.17364861 0.98480767 0.0 5.0 0.0 0.0 0.99999994 0.0 0.0 0.0 0.0 1.0 </matrix>
+              <node id="Cabeza-local" name="Cabeza-local" sid="Cabeza-local">
+                <matrix sid="matrix">1.0 0.0 0.0 -2.5 0.0 1.0 0.0 2.5 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+                <instance_geometry url="#Cabeza-Geom">
+                  <bind_material>
+                    <technique_common>
+                      <instance_material symbol="Cabeza-Material" target="#Cabeza-Material">
+                        <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="Cabeza-tex-bind"/>
+                      </instance_material>
+                    </technique_common>
+                  </bind_material>
+                </instance_geometry>
+              </node>
+            </node>
+            <node id="AletaDer-global" name="AletaDer-global" sid="AletaDer-global">
+              <matrix sid="matrix">0.96592593 1.4901161E-8 -0.2588191 0.0 -0.19826694 0.6427877 -0.73994213 4.0 0.16636573 0.76604444 0.62088525 3.0 0.0 0.0 0.0 1.0 </matrix>
+              <node id="AletaDer-local" name="AletaDer-local" sid="AletaDer-local">
+                <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 </matrix>
+                <instance_geometry url="#AletaDer-Geom">
+                  <bind_material>
+                    <technique_common>
+                      <instance_material symbol="AletaDer-Material" target="#AletaDer-Material">
+                        <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="AletaDer-tex-bind"/>
+                      </instance_material>
+                    </technique_common>
+                  </bind_material>
+                </instance_geometry>
+              </node>
+            </node>
+            <node id="Cola-global" name="Cola-global" sid="Cola-global">
+              <matrix sid="matrix">0.9396927 0.34202 0.0 6.0 -0.34202 0.9396927 0.0 3.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+              <node id="Cola-local" name="Cola-local" sid="Cola-local">
+                <matrix sid="matrix">1.0 0.0 0.0 2.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+                <instance_geometry url="#Cola-Geom">
+                  <bind_material>
+                    <technique_common>
+                      <instance_material symbol="Cola-Material" target="#Cola-Material">
+                        <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="Cola-tex-bind"/>
+                      </instance_material>
+                    </technique_common>
+                  </bind_material>
+                </instance_geometry>
+              </node>
+            </node>
+            <node id="AletaIzq-global" name="AletaIzq-global" sid="AletaIzq-global">
+              <matrix sid="matrix">0.9659258 1.4901161E-8 0.25881925 0.0 -0.18301283 0.70710695 0.68301255 4.0 -0.18301287 -0.70710665 0.6830128 -3.0 0.0 0.0 0.0 1.0 </matrix>
+              <node id="AletaIzq-local" name="AletaIzq-local" sid="AletaIzq-local">
+                <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 -4.0 0.0 0.0 0.0 1.0 </matrix>
+                <instance_geometry url="#AletaIzq-Geom">
+                  <bind_material>
+                    <technique_common>
+                      <instance_material symbol="AletaIzq-Material" target="#AletaIzq-Material">
+                        <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="AletaIzq-tex-bind"/>
+                      </instance_material>
+                    </technique_common>
+                  </bind_material>
+                </instance_geometry>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>

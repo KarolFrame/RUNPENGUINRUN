@@ -1,0 +1,1715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2023-03-03T17:05:31Z</created>
+    <modified>2023-03-03T17:05:31Z</modified>
+    <revision>1.0</revision>
+  </asset>
+  <library_images>
+    <image id="Cuerpo-diffuse-tex" name="Cuerpo-diffuse-tex">
+      <init_from>desplazarse_res/Cuerpo_diffuse.png</init_from>
+    </image>
+    <image id="Cuerpo-emissive-tex" name="Cuerpo-emissive-tex">
+      <init_from>desplazarse_res/Cuerpo_emissive.png</init_from>
+    </image>
+    <image id="Cabeza-diffuse-tex" name="Cabeza-diffuse-tex">
+      <init_from>desplazarse_res/Cabeza_diffuse.png</init_from>
+    </image>
+    <image id="Cabeza-emissive-tex" name="Cabeza-emissive-tex">
+      <init_from>desplazarse_res/Cabeza_emissive.png</init_from>
+    </image>
+    <image id="DerAleta-diffuse-tex" name="DerAleta-diffuse-tex">
+      <init_from>desplazarse_res/DerAleta_diffuse.png</init_from>
+    </image>
+    <image id="DerAleta-emissive-tex" name="DerAleta-emissive-tex">
+      <init_from>desplazarse_res/DerAleta_emissive.png</init_from>
+    </image>
+    <image id="DerMano-diffuse-tex" name="DerMano-diffuse-tex">
+      <init_from>desplazarse_res/DerMano_diffuse.png</init_from>
+    </image>
+    <image id="DerMano-emissive-tex" name="DerMano-emissive-tex">
+      <init_from>desplazarse_res/DerMano_emissive.png</init_from>
+    </image>
+    <image id="IzqAleta-diffuse-tex" name="IzqAleta-diffuse-tex">
+      <init_from>desplazarse_res/IzqAleta_diffuse.png</init_from>
+    </image>
+    <image id="IzqAleta-emissive-tex" name="IzqAleta-emissive-tex">
+      <init_from>desplazarse_res/IzqAleta_emissive.png</init_from>
+    </image>
+    <image id="IzqMano-diffuse-tex" name="IzqMano-diffuse-tex">
+      <init_from>desplazarse_res/IzqMano_diffuse.png</init_from>
+    </image>
+    <image id="IzqMano-emissive-tex" name="IzqMano-emissive-tex">
+      <init_from>desplazarse_res/IzqMano_emissive.png</init_from>
+    </image>
+    <image id="DerPie-diffuse-tex" name="DerPie-diffuse-tex">
+      <init_from>desplazarse_res/DerPie_diffuse.png</init_from>
+    </image>
+    <image id="DerPie-emissive-tex" name="DerPie-emissive-tex">
+      <init_from>desplazarse_res/DerPie_emissive.png</init_from>
+    </image>
+    <image id="IzqPie-diffuse-tex" name="IzqPie-diffuse-tex">
+      <init_from>desplazarse_res/IzqPie_diffuse.png</init_from>
+    </image>
+    <image id="IzqPie-emissive-tex" name="IzqPie-emissive-tex">
+      <init_from>desplazarse_res/IzqPie_emissive.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="Cuerpo-Effect">
+      <profile_COMMON>
+        <newparam sid="Cuerpo-diffuse-surface">
+          <surface type="2D">
+            <init_from>Cuerpo-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Cuerpo-emissive-surface">
+          <surface type="2D">
+            <init_from>Cuerpo-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Cuerpo-diffuse-sampler">
+          <sampler2D>
+            <source>Cuerpo-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="Cuerpo-emissive-sampler">
+          <sampler2D>
+            <source>Cuerpo-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="Cuerpo-tex-bind" texture="Cuerpo-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="Cuerpo-tex-bind" texture="Cuerpo-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Cabeza-Effect">
+      <profile_COMMON>
+        <newparam sid="Cabeza-diffuse-surface">
+          <surface type="2D">
+            <init_from>Cabeza-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Cabeza-emissive-surface">
+          <surface type="2D">
+            <init_from>Cabeza-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Cabeza-diffuse-sampler">
+          <sampler2D>
+            <source>Cabeza-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="Cabeza-emissive-sampler">
+          <sampler2D>
+            <source>Cabeza-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="Cabeza-tex-bind" texture="Cabeza-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="Cabeza-tex-bind" texture="Cabeza-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="DerAleta-Effect">
+      <profile_COMMON>
+        <newparam sid="DerAleta-diffuse-surface">
+          <surface type="2D">
+            <init_from>DerAleta-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="DerAleta-emissive-surface">
+          <surface type="2D">
+            <init_from>DerAleta-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="DerAleta-diffuse-sampler">
+          <sampler2D>
+            <source>DerAleta-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="DerAleta-emissive-sampler">
+          <sampler2D>
+            <source>DerAleta-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="DerAleta-tex-bind" texture="DerAleta-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="DerAleta-tex-bind" texture="DerAleta-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="DerMano-Effect">
+      <profile_COMMON>
+        <newparam sid="DerMano-diffuse-surface">
+          <surface type="2D">
+            <init_from>DerMano-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="DerMano-emissive-surface">
+          <surface type="2D">
+            <init_from>DerMano-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="DerMano-diffuse-sampler">
+          <sampler2D>
+            <source>DerMano-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="DerMano-emissive-sampler">
+          <sampler2D>
+            <source>DerMano-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="DerMano-tex-bind" texture="DerMano-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="DerMano-tex-bind" texture="DerMano-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="IzqAleta-Effect">
+      <profile_COMMON>
+        <newparam sid="IzqAleta-diffuse-surface">
+          <surface type="2D">
+            <init_from>IzqAleta-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="IzqAleta-emissive-surface">
+          <surface type="2D">
+            <init_from>IzqAleta-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="IzqAleta-diffuse-sampler">
+          <sampler2D>
+            <source>IzqAleta-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="IzqAleta-emissive-sampler">
+          <sampler2D>
+            <source>IzqAleta-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="IzqAleta-tex-bind" texture="IzqAleta-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="IzqAleta-tex-bind" texture="IzqAleta-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="IzqMano-Effect">
+      <profile_COMMON>
+        <newparam sid="IzqMano-diffuse-surface">
+          <surface type="2D">
+            <init_from>IzqMano-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="IzqMano-emissive-surface">
+          <surface type="2D">
+            <init_from>IzqMano-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="IzqMano-diffuse-sampler">
+          <sampler2D>
+            <source>IzqMano-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="IzqMano-emissive-sampler">
+          <sampler2D>
+            <source>IzqMano-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="IzqMano-tex-bind" texture="IzqMano-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="IzqMano-tex-bind" texture="IzqMano-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="DerPie-Effect">
+      <profile_COMMON>
+        <newparam sid="DerPie-diffuse-surface">
+          <surface type="2D">
+            <init_from>DerPie-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="DerPie-emissive-surface">
+          <surface type="2D">
+            <init_from>DerPie-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="DerPie-diffuse-sampler">
+          <sampler2D>
+            <source>DerPie-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="DerPie-emissive-sampler">
+          <sampler2D>
+            <source>DerPie-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="DerPie-tex-bind" texture="DerPie-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="DerPie-tex-bind" texture="DerPie-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="IzqPie-Effect">
+      <profile_COMMON>
+        <newparam sid="IzqPie-diffuse-surface">
+          <surface type="2D">
+            <init_from>IzqPie-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="IzqPie-emissive-surface">
+          <surface type="2D">
+            <init_from>IzqPie-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="IzqPie-diffuse-sampler">
+          <sampler2D>
+            <source>IzqPie-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="IzqPie-emissive-sampler">
+          <sampler2D>
+            <source>IzqPie-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="IzqPie-tex-bind" texture="IzqPie-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="IzqPie-tex-bind" texture="IzqPie-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="Cuerpo-Material">
+      <instance_effect url="#Cuerpo-Effect"/>
+    </material>
+    <material id="Cabeza-Material">
+      <instance_effect url="#Cabeza-Effect"/>
+    </material>
+    <material id="DerAleta-Material">
+      <instance_effect url="#DerAleta-Effect"/>
+    </material>
+    <material id="DerMano-Material">
+      <instance_effect url="#DerMano-Effect"/>
+    </material>
+    <material id="IzqAleta-Material">
+      <instance_effect url="#IzqAleta-Effect"/>
+    </material>
+    <material id="IzqMano-Material">
+      <instance_effect url="#IzqMano-Effect"/>
+    </material>
+    <material id="DerPie-Material">
+      <instance_effect url="#DerPie-Effect"/>
+    </material>
+    <material id="IzqPie-Material">
+      <instance_effect url="#IzqPie-Effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Cuerpo-Geom" name="Cuerpo-Geom">
+      <mesh>
+        <source id="Cuerpo-Pos">
+          <float_array count="816" id="Cuerpo-Pos-array">-5.0 -6.9999995 3.9999993 -5.0 4.0000005 3.9999993 -5.0 4.0000005 -1.0000002 -5.0 -6.9999995 -1.0000002 -5.0 -6.9999995 -2.0 -5.0 6.0 -2.0 -5.0 6.0 -5.9999995 -5.0 -6.9999995 -5.9999995 -5.0 -6.9999995 -1.0000002 -5.0 5.0000005 -1.0000002 -5.0 5.0000005 -2.0 -5.0 -6.9999995 -2.0 -5.0 4.0000005 3.9999993 -5.0 6.0 3.9999993 -5.0 6.0 0.9999994 -5.0 4.0000005 0.9999994 -4.0 6.0 -2.9999998 -4.0 6.9999995 -2.9999998 -4.0 6.9999995 -5.0 -4.0 6.0 -5.0 -2.9999998 -5.0 1.9999996 -2.9999998 6.9999995 1.9999996 -2.9999998 6.9999995 -2.9999998 -2.9999998 -5.0 -2.9999998 -2.9999998 -5.9999995 1.9999996 -2.9999998 -5.0 1.9999996 -2.9999998 -5.0 0.0 -2.9999998 -5.9999995 0.0 -2.9999998 -5.9999995 4.9999995 -2.9999998 -3.9999995 4.9999995 -2.9999998 -3.9999995 3.9999993 -2.9999998 -5.9999995 3.9999993 -2.9999998 -5.9999995 -2.0 -2.9999998 -5.0 -2.0 -2.9999998 -5.0 -2.9999998 -2.9999998 -5.9999995 -2.9999998 -2.9999998 -5.9999995 5.9999995 -2.9999998 -5.0 5.9999995 -2.9999998 -5.0 4.9999995 -2.9999998 -5.9999995 4.9999995 4.0000005 -5.9999995 2.9999998 4.0000005 4.0000005 2.9999998 4.0000005 4.0000005 -1.0000002 4.0000005 -5.9999995 -1.0000002 4.0000005 -5.9999995 -2.0 4.0000005 6.0 -2.0 4.0000005 6.0 -2.9999998 4.0000005 -5.9999995 -2.9999998 4.0000005 -5.9999995 -1.0000002 4.0000005 5.0000005 -1.0000002 4.0000005 5.0000005 -2.0 4.0000005 -5.9999995 -2.0 4.0000005 4.0000005 2.9999998 4.0000005 6.0 2.9999998 4.0000005 6.0 0.9999994 4.0000005 4.0000005 0.9999994 -4.0 -5.0 -1.0000002 -4.0 4.0000005 -1.0000002 -4.0 4.0000005 2.9999998 -4.0 -5.0 2.9999998 -4.0 -5.9999995 -2.9999998 -4.0 6.0 -2.9999998 -4.0 6.0 -2.0 -4.0 -5.9999995 -2.0 -4.0 -5.0 -2.0 -4.0 5.0000005 -2.0 -4.0 5.0000005 -1.0000002 -4.0 -5.0 -1.0000002 -4.0 4.0000005 0.9999994 -4.0 6.0 0.9999994 -4.0 6.0 2.9999998 -4.0 4.0000005 2.9999998 -4.0 -5.9999995 0.0 -4.0 -5.0 0.0 -4.0 -5.0 2.9999998 -4.0 -5.9999995 2.9999998 3.0 -5.9999995 -2.9999998 3.0 6.9999995 -2.9999998 3.0 6.9999995 1.9999996 3.0 -5.9999995 1.9999996 3.0 -5.9999995 3.9999993 3.0 -3.9999995 3.9999993 3.0 -3.9999995 4.9999995 3.0 -5.9999995 4.9999995 3.0 -5.9999995 4.9999995 3.0 -5.0 4.9999995 3.0 -5.0 5.9999995 3.0 -5.9999995 5.9999995 4.0000005 6.0 -5.0 4.0000005 6.9999995 -5.0 4.0000005 6.9999995 -2.9999998 4.0000005 6.0 -2.9999998 5.0 -6.9999995 -1.0000002 5.0 4.0000005 -1.0000002 5.0 4.0000005 3.9999993 5.0 -6.9999995 3.9999993 5.0 -6.9999995 -5.9999995 5.0 6.0 -5.9999995 5.0 6.0 -2.0 5.0 -6.9999995 -2.0 5.0 -6.9999995 -2.0 5.0 5.0000005 -2.0 5.0 5.0000005 -1.0000002 5.0 -6.9999995 -1.0000002 5.0 4.0000005 0.9999994 5.0 6.0 0.9999994 5.0 6.0 3.9999993 5.0 4.0000005 3.9999993 -5.0 -6.9999995 -5.9999995 5.0 -6.9999995 -5.9999995 5.0 -6.9999995 3.9999993 -5.0 -6.9999995 3.9999993 -2.9999998 -5.9999995 3.9999993 3.0 -5.9999995 3.9999993 3.0 -5.9999995 5.9999995 -2.9999998 -5.9999995 5.9999995 -4.0 -5.9999995 2.9999998 4.0000005 -5.9999995 2.9999998 4.0000005 -5.9999995 1.9999996 -4.0 -5.9999995 1.9999996 3.0 -5.9999995 1.9999996 4.0000005 -5.9999995 1.9999996 4.0000005 -5.9999995 -2.9999998 3.0 -5.9999995 -2.9999998 -4.0 -5.9999995 1.9999996 -2.9999998 -5.9999995 1.9999996 -2.9999998 -5.9999995 0.0 -4.0 -5.9999995 0.0 -4.0 -5.9999995 -2.0 -2.9999998 -5.9999995 -2.0 -2.9999998 -5.9999995 -2.9999998 -4.0 -5.9999995 -2.9999998 -2.9999998 -5.0 5.9999995 3.0 -5.0 5.9999995 3.0 -5.0 4.9999995 -2.9999998 -5.0 4.9999995 -4.0 -5.0 0.0 -2.9999998 -5.0 0.0 -2.9999998 -5.0 -2.0 -4.0 -5.0 -2.0 -2.9999998 -3.9999995 4.9999995 3.0 -3.9999995 4.9999995 3.0 -3.9999995 3.9999993 -2.9999998 -3.9999995 3.9999993 -5.0 4.0000005 0.9999994 -4.0 4.0000005 0.9999994 -4.0 4.0000005 -1.0000002 -5.0 4.0000005 -1.0000002 4.0000005 4.0000005 0.9999994 5.0 4.0000005 0.9999994 5.0 4.0000005 -1.0000002 4.0000005 4.0000005 -1.0000002 -5.0 5.0000005 -1.0000002 -4.0 5.0000005 -1.0000002 -4.0 5.0000005 -2.0 -5.0 5.0000005 -2.0 4.0000005 5.0000005 -1.0000002 5.0 5.0000005 -1.0000002 5.0 5.0000005 -2.0 4.0000005 5.0000005 -2.0 -5.0 6.0 -5.0 5.0 6.0 -5.0 5.0 6.0 -5.9999995 -5.0 6.0 -5.9999995 -5.0 6.0 3.9999993 5.0 6.0 3.9999993 5.0 6.0 2.9999998 -5.0 6.0 2.9999998 -5.0 6.0 -2.0 -4.0 6.0 -2.0 -4.0 6.0 -5.0 -5.0 6.0 -5.0 4.0000005 6.0 -2.0 5.0 6.0 -2.0 5.0 6.0 -5.0 4.0000005 6.0 -5.0 -5.0 6.0 2.9999998 -4.0 6.0 2.9999998 -4.0 6.0 0.9999994 -5.0 6.0 0.9999994 4.0000005 6.0 2.9999998 5.0 6.0 2.9999998 5.0 6.0 0.9999994 4.0000005 6.0 0.9999994 -2.9999998 6.9999995 1.9999996 3.0 6.9999995 1.9999996 3.0 6.9999995 -2.9999998 -2.9999998 6.9999995 -2.9999998 -4.0 6.9999995 -2.9999998 4.0000005 6.9999995 -2.9999998 4.0000005 6.9999995 -5.0 -4.0 6.9999995 -5.0 -5.0 6.0 -5.9999995 5.0 6.0 -5.9999995 5.0 -6.9999995 -5.9999995 -5.0 -6.9999995 -5.9999995 -4.0 6.9999995 -5.0 4.0000005 6.9999995 -5.0 4.0000005 6.0 -5.0 -4.0 6.0 -5.0 -4.0 -5.0 -2.0 -2.9999998 -5.0 -2.0 -2.9999998 -5.9999995 -2.0 -4.0 -5.9999995 -2.0 -5.0 6.0 0.9999994 -4.0 6.0 0.9999994 -4.0 4.0000005 0.9999994 -5.0 4.0000005 0.9999994 4.0000005 6.0 0.9999994 5.0 6.0 0.9999994 5.0 4.0000005 0.9999994 4.0000005 4.0000005 0.9999994 -4.0 6.0 2.9999998 4.0000005 6.0 2.9999998 4.0000005 -5.9999995 2.9999998 -4.0 -5.9999995 2.9999998 -4.0 -5.9999995 -2.9999998 -2.9999998 -5.9999995 -2.9999998 -2.9999998 6.9999995 -2.9999998 -4.0 6.9999995 -2.9999998 3.0 -5.9999995 -2.9999998 4.0000005 -5.9999995 -2.9999998 4.0000005 6.9999995 -2.9999998 3.0 6.9999995 -2.9999998 -5.0 5.0000005 -2.0 -4.0 5.0000005 -2.0 -4.0 6.0 -2.0 -5.0 6.0 -2.0 4.0000005 5.0000005 -2.0 5.0 5.0000005 -2.0 5.0 6.0 -2.0 4.0000005 6.0 -2.0 -5.0 4.0000005 -1.0000002 -4.0 4.0000005 -1.0000002 -4.0 5.0000005 -1.0000002 -5.0 5.0000005 -1.0000002 4.0000005 4.0000005 -1.0000002 5.0 4.0000005 -1.0000002 5.0 5.0000005 -1.0000002 4.0000005 5.0000005 -1.0000002 -4.0 -5.9999995 0.0 -2.9999998 -5.9999995 0.0 -2.9999998 -5.0 0.0 -4.0 -5.0 0.0 -2.9999998 -5.9999995 1.9999996 3.0 -5.9999995 1.9999996 3.0 6.9999995 1.9999996 -2.9999998 6.9999995 1.9999996 -5.0 -3.9999995 3.9999993 5.0 -3.9999995 3.9999993 5.0 6.0 3.9999993 -5.0 6.0 3.9999993 -5.0 -6.9999995 3.9999993 5.0 -6.9999995 3.9999993 5.0 -5.9999995 3.9999993 -5.0 -5.9999995 3.9999993 -5.0 -5.9999995 3.9999993 -2.9999998 -5.9999995 3.9999993 -2.9999998 -3.9999995 3.9999993 -5.0 -3.9999995 3.9999993 3.0 -5.9999995 3.9999993 5.0 -5.9999995 3.9999993 5.0 -3.9999995 3.9999993 3.0 -3.9999995 3.9999993 -2.9999998 -5.0 4.9999995 3.0 -5.0 4.9999995 3.0 -3.9999995 4.9999995 -2.9999998 -3.9999995 4.9999995 -2.9999998 -5.9999995 5.9999995 3.0 -5.9999995 5.9999995 3.0 -5.0 5.9999995 -2.9999998 -5.0 5.9999995 </float_array>
+          <technique_common>
+            <accessor count="272" source="#Cuerpo-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cuerpo-UV">
+          <float_array count="544" id="Cuerpo-UV-array">0.328125 0.15625 0.328125 0.5 0.25 0.5 0.25 0.15625 0.3125 0.59375 0.3125 1.0 0.25 1.0 0.25 0.59375 0.375 0.125 0.375 0.5 0.359375 0.5 0.359375 0.125 0.09375 0.90625 0.125 0.90625 0.125 1.0 0.09375 1.0 0.25 0.9375 0.265625 0.9375 0.265625 1.0 0.25 1.0 0.328125 0.625 0.328125 1.0 0.25 1.0 0.25 0.625 0.25 0.9375 0.265625 0.9375 0.265625 1.0 0.25 1.0 0.015625 0.9375 0.015625 1.0 0.0 1.0 0.0 0.9375 0.046875 0.96875 0.0625 0.96875 0.0625 1.0 0.046875 1.0 0.0 0.96875 0.015625 0.96875 0.015625 1.0 0.0 1.0 0.5625 0.6875 0.5625 1.0 0.5 1.0 0.5 0.6875 0.265625 0.625 0.265625 1.0 0.25 1.0 0.25 0.625 0.375 0.15625 0.375 0.5 0.359375 0.5 0.359375 0.15625 0.09375 0.9375 0.125 0.9375 0.125 1.0 0.09375 1.0 0.09375 0.71875 0.09375 1.0 0.15625 1.0 0.15625 0.71875 0.25 0.625 0.25 1.0 0.265625 1.0 0.265625 0.625 0.4375 0.6875 0.4375 1.0 0.453125 1.0 0.453125 0.6875 0.09375 1.0 0.125 1.0 0.125 0.9375 0.09375 0.9375 0.0 1.0 0.015625 1.0 0.015625 0.90625 0.0 0.90625 0.25 0.59375 0.25 1.0 0.328125 1.0 0.328125 0.59375 0.0 0.9375 0.0 1.0 0.015625 1.0 0.015625 0.9375 0.0 1.0 0.015625 1.0 0.015625 0.96875 0.0 0.96875 0.25 1.0 0.265625 1.0 0.265625 0.9375 0.25 0.9375 0.5 0.65625 0.5 1.0 0.578125 1.0 0.578125 0.65625 0.25 0.59375 0.25 1.0 0.3125 1.0 0.3125 0.59375 0.359375 0.125 0.359375 0.5 0.375 0.5 0.375 0.125 0.09375 1.0 0.125 1.0 0.125 0.90625 0.09375 0.90625 0.0 0.5 0.15625 0.5 0.15625 0.1875 0.0 0.1875 0.09375 0.8125 0.09375 1.0 0.125 1.0 0.125 0.8125 0.015625 0.75 0.015625 1.0 0.0 1.0 0.0 0.75 0.046875 0.84375 0.0625 0.84375 0.0625 1.0 0.046875 1.0 0.0 0.9375 0.015625 0.9375 0.015625 1.0 0.0 1.0 0.046875 0.96875 0.0625 0.96875 0.0625 1.0 0.046875 1.0 0.015625 0.8125 0.015625 1.0 0.0 1.0 0.0 0.8125 0.0 0.9375 0.015625 0.9375 0.015625 1.0 0.0 1.0 0.015625 0.8125 0.015625 1.0 0.0 1.0 0.0 0.8125 0.0 0.9375 0.015625 0.9375 0.015625 1.0 0.0 1.0 0.0 0.9375 0.015625 0.9375 0.015625 1.0 0.0 1.0 0.046875 0.96875 0.0625 0.96875 0.0625 1.0 0.046875 1.0 0.046875 0.96875 0.0625 0.96875 0.0625 1.0 0.046875 1.0 0.265625 0.6875 0.265625 1.0 0.25 1.0 0.25 0.6875 0.203125 0.1875 0.203125 0.5 0.1875 0.5 0.1875 0.1875 0.25 0.90625 0.265625 0.90625 0.265625 1.0 0.25 1.0 0.25 0.90625 0.265625 0.90625 0.265625 1.0 0.25 1.0 0.0 0.9375 0.015625 0.9375 0.015625 1.0 0.0 1.0 0.0 0.9375 0.015625 0.9375 0.015625 1.0 0.0 1.0 0.328125 0.8125 0.328125 1.0 0.25 1.0 0.25 0.8125 0.28125 0.75 0.28125 1.0 0.25 1.0 0.25 0.75 0.25 0.59375 0.40625 0.59375 0.40625 1.0 0.25 1.0 0.265625 0.75 0.265625 1.0 0.25 1.0 0.25 0.75 0.0 0.96875 0.015625 0.96875 0.015625 1.0 0.0 1.0 0.0 0.9375 0.015625 0.9375 0.015625 1.0 0.0 1.0 0.0 0.9375 0.015625 0.9375 0.015625 1.0 0.0 1.0 0.5 0.625 0.625 0.625 0.625 1.0 0.5 1.0 0.25 1.0 0.265625 1.0 0.265625 0.59375 0.25 0.59375 0.25 1.0 0.265625 1.0 0.265625 0.59375 0.25 0.59375 0.046875 1.0 0.0625 1.0 0.0625 0.96875 0.046875 0.96875 0.046875 1.0 0.0625 1.0 0.0625 0.96875 0.046875 0.96875 0.046875 1.0 0.0625 1.0 0.0625 0.96875 0.046875 0.96875 0.046875 1.0 0.0625 1.0 0.0625 0.96875 0.046875 0.96875 0.0 1.0 0.015625 1.0 0.015625 0.96875 0.0 0.96875 0.25 1.0 0.34375 1.0 0.34375 0.59375 0.25 0.59375 0.5 0.5 0.65625 0.5 0.65625 0.1875 0.5 0.1875 0.5 0.6875 0.5 1.0 0.515625 1.0 0.515625 0.6875 0.09375 1.0 0.125 1.0 0.125 0.9375 0.09375 0.9375 0.09375 1.0 0.125 1.0 0.125 0.9375 0.09375 0.9375 0.0 0.8125 0.0 1.0 0.015625 1.0 0.015625 0.8125 0.0 0.8125 0.0 1.0 0.015625 1.0 0.015625 0.8125 </float_array>
+          <technique_common>
+            <accessor count="272" source="#Cuerpo-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cuerpo-Normal">
+          <float_array count="18" id="Cuerpo-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#Cuerpo-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Cuerpo-Vertices">
+          <input semantic="POSITION" source="#Cuerpo-Pos"/>
+        </vertices>
+        <polylist count="68" material="Cuerpo-Material">
+          <input offset="0" semantic="VERTEX" source="#Cuerpo-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#Cuerpo-UV"/>
+          <input offset="2" semantic="NORMAL" source="#Cuerpo-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 0 9 9 0 10 10 0 11 11 0 12 12 0 13 13 0 14 14 0 15 15 0 16 16 0 17 17 0 18 18 0 19 19 0 20 20 0 21 21 0 22 22 0 23 23 0 24 24 0 25 25 0 26 26 0 27 27 0 28 28 0 29 29 0 30 30 0 31 31 0 32 32 0 33 33 0 34 34 0 35 35 0 36 36 0 37 37 0 38 38 0 39 39 0 40 40 0 41 41 0 42 42 0 43 43 0 44 44 0 45 45 0 46 46 0 47 47 0 48 48 0 49 49 0 50 50 0 51 51 0 52 52 0 53 53 0 54 54 0 55 55 0 56 56 1 57 57 1 58 58 1 59 59 1 60 60 1 61 61 1 62 62 1 63 63 1 64 64 1 65 65 1 66 66 1 67 67 1 68 68 1 69 69 1 70 70 1 71 71 1 72 72 1 73 73 1 74 74 1 75 75 1 76 76 1 77 77 1 78 78 1 79 79 1 80 80 1 81 81 1 82 82 1 83 83 1 84 84 1 85 85 1 86 86 1 87 87 1 88 88 1 89 89 1 90 90 1 91 91 1 92 92 1 93 93 1 94 94 1 95 95 1 96 96 1 97 97 1 98 98 1 99 99 1 100 100 1 101 101 1 102 102 1 103 103 1 104 104 1 105 105 1 106 106 1 107 107 1 108 108 2 109 109 2 110 110 2 111 111 2 112 112 2 113 113 2 114 114 2 115 115 2 116 116 3 117 117 3 118 118 3 119 119 3 120 120 3 121 121 3 122 122 3 123 123 3 124 124 3 125 125 3 126 126 3 127 127 3 128 128 3 129 129 3 130 130 3 131 131 3 132 132 3 133 133 3 134 134 3 135 135 3 136 136 3 137 137 3 138 138 3 139 139 3 140 140 3 141 141 3 142 142 3 143 143 3 144 144 3 145 145 3 146 146 3 147 147 3 148 148 3 149 149 3 150 150 3 151 151 3 152 152 3 153 153 3 154 154 3 155 155 3 156 156 3 157 157 3 158 158 3 159 159 3 160 160 3 161 161 3 162 162 3 163 163 3 164 164 3 165 165 3 166 166 3 167 167 3 168 168 3 169 169 3 170 170 3 171 171 3 172 172 3 173 173 3 174 174 3 175 175 3 176 176 3 177 177 3 178 178 3 179 179 3 180 180 3 181 181 3 182 182 3 183 183 3 184 184 3 185 185 3 186 186 3 187 187 3 188 188 3 189 189 3 190 190 3 191 191 3 192 192 4 193 193 4 194 194 4 195 195 4 196 196 4 197 197 4 198 198 4 199 199 4 200 200 4 201 201 4 202 202 4 203 203 4 204 204 4 205 205 4 206 206 4 207 207 4 208 208 4 209 209 4 210 210 4 211 211 4 212 212 4 213 213 4 214 214 4 215 215 4 216 216 5 217 217 5 218 218 5 219 219 5 220 220 5 221 221 5 222 222 5 223 223 5 224 224 5 225 225 5 226 226 5 227 227 5 228 228 5 229 229 5 230 230 5 231 231 5 232 232 5 233 233 5 234 234 5 235 235 5 236 236 5 237 237 5 238 238 5 239 239 5 240 240 5 241 241 5 242 242 5 243 243 5 244 244 5 245 245 5 246 246 5 247 247 5 248 248 5 249 249 5 250 250 5 251 251 5 252 252 5 253 253 5 254 254 5 255 255 5 256 256 5 257 257 5 258 258 5 259 259 5 260 260 5 261 261 5 262 262 5 263 263 5 264 264 5 265 265 5 266 266 5 267 267 5 268 268 5 269 269 5 270 270 5 271 271 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Cabeza-Geom" name="Cabeza-Geom">
+      <mesh>
+        <source id="Cabeza-Pos">
+          <float_array count="756" id="Cabeza-Pos-array">-5.9999995 1.4999996 1.5000002 -5.9999995 2.4999998 1.5000002 -5.9999995 2.4999998 -1.4999998 -5.9999995 1.4999996 -1.4999998 -5.9999995 0.4999999 2.5 -5.9999995 1.4999996 2.5 -5.9999995 1.4999996 1.5000002 -5.9999995 0.4999999 1.5000002 -4.9999995 -3.4999998 6.4999995 -4.9999995 3.4999998 6.4999995 -4.9999995 3.4999998 2.5 -4.9999995 -3.4999998 2.5 -4.9999995 -3.4999998 1.5000002 -4.9999995 1.4999996 1.5000002 -4.9999995 1.4999996 -1.4999998 -4.9999995 -3.4999998 -1.4999998 -4.9999995 -3.4999998 -1.4999998 -4.9999995 3.4999998 -1.4999998 -4.9999995 3.4999998 -3.4999995 -4.9999995 -3.4999998 -3.4999995 -4.9999995 2.4999998 2.5 -4.9999995 3.4999998 2.5 -4.9999995 3.4999998 -1.4999998 -4.9999995 2.4999998 -1.4999998 -4.9999995 -3.4999998 2.5 -4.9999995 0.4999999 2.5 -4.9999995 0.4999999 1.5000002 -4.9999995 -3.4999998 1.5000002 -4.9999995 1.4999996 2.5 -4.9999995 2.4999998 2.5 -4.9999995 2.4999998 1.5000002 -4.9999995 1.4999996 1.5000002 -1.0000002 -2.4999998 -3.4999995 -1.0000002 -0.4999999 -3.4999995 -1.0000002 -0.4999999 -5.4999995 -1.0000002 -2.4999998 -5.4999995 -1.0000002 -1.4999999 -5.4999995 -1.0000002 -0.4999999 -5.4999995 -1.0000002 -0.4999999 -6.4999995 -1.0000002 -1.4999999 -6.4999995 2.9999993 -3.4999998 4.5 2.9999993 -2.4999998 4.5 2.9999993 -2.4999998 -0.49999955 2.9999993 -3.4999998 -0.49999955 3.9999993 -3.4999998 -0.49999955 3.9999993 -2.4999998 -0.49999955 3.9999993 -2.4999998 -2.4999998 3.9999993 -3.4999998 -2.4999998 -4.0 -3.4999998 -2.4999998 -4.0 -2.4999998 -2.4999998 -4.0 -2.4999998 -0.49999955 -4.0 -3.4999998 -0.49999955 -2.9999998 -3.4999998 -0.49999955 -2.9999998 -2.4999998 -0.49999955 -2.9999998 -2.4999998 4.5 -2.9999998 -3.4999998 4.5 0.9999998 -2.4999998 -5.4999995 0.9999998 -0.4999999 -5.4999995 0.9999998 -0.4999999 -3.4999995 0.9999998 -2.4999998 -3.4999995 0.9999998 -1.4999999 -6.4999995 0.9999998 -0.4999999 -6.4999995 0.9999998 -0.4999999 -5.4999995 0.9999998 -1.4999999 -5.4999995 4.999999 -3.4999998 2.5 4.999999 3.4999998 2.5 4.999999 3.4999998 6.4999995 4.999999 -3.4999998 6.4999995 4.999999 -3.4999998 -1.4999998 4.999999 1.4999996 -1.4999998 4.999999 1.4999996 1.5000002 4.999999 -3.4999998 1.5000002 4.999999 -3.4999998 -3.4999995 4.999999 3.4999998 -3.4999995 4.999999 3.4999998 -1.4999998 4.999999 -3.4999998 -1.4999998 4.999999 2.4999998 -1.4999998 4.999999 3.4999998 -1.4999998 4.999999 3.4999998 2.5 4.999999 2.4999998 2.5 4.999999 -3.4999998 1.5000002 4.999999 0.4999999 1.5000002 4.999999 0.4999999 2.5 4.999999 -3.4999998 2.5 4.999999 1.4999996 1.5000002 4.999999 2.4999998 1.5000002 4.999999 2.4999998 2.5 4.999999 1.4999996 2.5 5.9999995 1.4999996 -1.4999998 5.9999995 2.4999998 -1.4999998 5.9999995 2.4999998 1.5000002 5.9999995 1.4999996 1.5000002 5.9999995 0.4999999 1.5000002 5.9999995 1.4999996 1.5000002 5.9999995 1.4999996 2.5 5.9999995 0.4999999 2.5 -4.9999995 -3.4999998 4.5 4.999999 -3.4999998 4.5 4.999999 -3.4999998 6.4999995 -4.9999995 -3.4999998 6.4999995 -4.9999995 -3.4999998 -3.4999995 4.999999 -3.4999998 -3.4999995 4.999999 -3.4999998 -2.4999998 -4.9999995 -3.4999998 -2.4999998 -4.9999995 -3.4999998 -0.49999955 -2.9999998 -3.4999998 -0.49999955 -2.9999998 -3.4999998 4.5 -4.9999995 -3.4999998 4.5 2.9999993 -3.4999998 -0.49999955 4.999999 -3.4999998 -0.49999955 4.999999 -3.4999998 4.5 2.9999993 -3.4999998 4.5 -4.9999995 -3.4999998 -2.4999998 -4.0 -3.4999998 -2.4999998 -4.0 -3.4999998 -0.49999955 -4.9999995 -3.4999998 -0.49999955 3.9999993 -3.4999998 -2.4999998 4.999999 -3.4999998 -2.4999998 4.999999 -3.4999998 -0.49999955 3.9999993 -3.4999998 -0.49999955 -2.9999998 -2.4999998 -0.49999955 2.9999993 -2.4999998 -0.49999955 2.9999993 -2.4999998 4.5 -2.9999998 -2.4999998 4.5 -4.0 -2.4999998 -2.4999998 3.9999993 -2.4999998 -2.4999998 3.9999993 -2.4999998 -0.49999955 -4.0 -2.4999998 -0.49999955 -1.0000002 -2.4999998 -5.4999995 0.9999998 -2.4999998 -5.4999995 0.9999998 -2.4999998 -3.4999995 -1.0000002 -2.4999998 -3.4999995 -1.0000002 -1.4999999 -6.4999995 0.9999998 -1.4999999 -6.4999995 0.9999998 -1.4999999 -5.4999995 -1.0000002 -1.4999999 -5.4999995 -5.9999995 0.4999999 1.5000002 -4.9999995 0.4999999 1.5000002 -4.9999995 0.4999999 2.5 -5.9999995 0.4999999 2.5 4.999999 0.4999999 1.5000002 5.9999995 0.4999999 1.5000002 5.9999995 0.4999999 2.5 4.999999 0.4999999 2.5 -5.9999995 1.4999996 -1.4999998 -4.9999995 1.4999996 -1.4999998 -4.9999995 1.4999996 1.5000002 -5.9999995 1.4999996 1.5000002 4.999999 1.4999996 -1.4999998 5.9999995 1.4999996 -1.4999998 5.9999995 1.4999996 1.5000002 4.999999 1.4999996 1.5000002 -1.0000002 -0.4999999 -3.4999995 0.9999998 -0.4999999 -3.4999995 0.9999998 -0.4999999 -6.4999995 -1.0000002 -0.4999999 -6.4999995 -5.9999995 1.4999996 2.5 -4.9999995 1.4999996 2.5 -4.9999995 1.4999996 1.5000002 -5.9999995 1.4999996 1.5000002 4.999999 1.4999996 2.5 5.9999995 1.4999996 2.5 5.9999995 1.4999996 1.5000002 4.999999 1.4999996 1.5000002 -5.9999995 2.4999998 1.5000002 -4.9999995 2.4999998 1.5000002 -4.9999995 2.4999998 -1.4999998 -5.9999995 2.4999998 -1.4999998 4.999999 2.4999998 1.5000002 5.9999995 2.4999998 1.5000002 5.9999995 2.4999998 -1.4999998 4.999999 2.4999998 -1.4999998 -4.9999995 3.4999998 6.4999995 4.999999 3.4999998 6.4999995 4.999999 3.4999998 -3.4999995 -4.9999995 3.4999998 -3.4999995 -1.0000002 -0.4999999 -6.4999995 0.9999998 -0.4999999 -6.4999995 0.9999998 -1.4999999 -6.4999995 -1.0000002 -1.4999999 -6.4999995 -1.0000002 -1.4999999 -5.4999995 0.9999998 -1.4999999 -5.4999995 0.9999998 -2.4999998 -5.4999995 -1.0000002 -2.4999998 -5.4999995 -4.9999995 3.4999998 -3.4999995 4.999999 3.4999998 -3.4999995 4.999999 -0.4999999 -3.4999995 -4.9999995 -0.4999999 -3.4999995 0.9999998 -0.4999999 -3.4999995 4.999999 -0.4999999 -3.4999995 4.999999 -3.4999998 -3.4999995 0.9999998 -3.4999998 -3.4999995 -4.9999995 -0.4999999 -3.4999995 -1.0000002 -0.4999999 -3.4999995 -1.0000002 -2.4999998 -3.4999995 -4.9999995 -2.4999998 -3.4999995 -4.9999995 -2.4999998 -3.4999995 0.9999998 -2.4999998 -3.4999995 0.9999998 -3.4999998 -3.4999995 -4.9999995 -3.4999998 -3.4999995 -5.9999995 2.4999998 -1.4999998 -4.9999995 2.4999998 -1.4999998 -4.9999995 1.4999996 -1.4999998 -5.9999995 1.4999996 -1.4999998 4.999999 2.4999998 -1.4999998 5.9999995 2.4999998 -1.4999998 5.9999995 1.4999996 -1.4999998 4.999999 1.4999996 -1.4999998 -4.0 -2.4999998 -0.49999955 -2.9999998 -2.4999998 -0.49999955 -2.9999998 -3.4999998 -0.49999955 -4.0 -3.4999998 -0.49999955 2.9999993 -2.4999998 -0.49999955 3.9999993 -2.4999998 -0.49999955 3.9999993 -3.4999998 -0.49999955 2.9999993 -3.4999998 -0.49999955 -5.9999995 1.4999996 1.5000002 -4.9999995 1.4999996 1.5000002 -4.9999995 0.4999999 1.5000002 -5.9999995 0.4999999 1.5000002 4.999999 1.4999996 1.5000002 5.9999995 1.4999996 1.5000002 5.9999995 0.4999999 1.5000002 4.999999 0.4999999 1.5000002 -2.9999998 -2.4999998 4.5 2.9999993 -2.4999998 4.5 2.9999993 -3.4999998 4.5 -2.9999998 -3.4999998 4.5 -4.0 -3.4999998 -2.4999998 3.9999993 -3.4999998 -2.4999998 3.9999993 -2.4999998 -2.4999998 -4.0 -2.4999998 -2.4999998 -5.9999995 1.4999996 1.5000002 -4.9999995 1.4999996 1.5000002 -4.9999995 2.4999998 1.5000002 -5.9999995 2.4999998 1.5000002 4.999999 1.4999996 1.5000002 5.9999995 1.4999996 1.5000002 5.9999995 2.4999998 1.5000002 4.999999 2.4999998 1.5000002 -5.9999995 0.4999999 2.5 -4.9999995 0.4999999 2.5 -4.9999995 1.4999996 2.5 -5.9999995 1.4999996 2.5 4.999999 0.4999999 2.5 5.9999995 0.4999999 2.5 5.9999995 1.4999996 2.5 4.999999 1.4999996 2.5 -4.9999995 -3.4999998 6.4999995 4.999999 -3.4999998 6.4999995 4.999999 3.4999998 6.4999995 -4.9999995 3.4999998 6.4999995 </float_array>
+          <technique_common>
+            <accessor count="252" source="#Cabeza-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cabeza-UV">
+          <float_array count="504" id="Cabeza-UV-array">0.0 0.90625 0.03125 0.90625 0.03125 1.0 0.0 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.71875 0.78125 0.71875 1.0 0.59375 1.0 0.59375 0.78125 0.40625 0.6875 0.40625 0.84375 0.3125 0.84375 0.3125 0.6875 0.53125 0.78125 0.53125 1.0 0.46875 1.0 0.46875 0.78125 0.46875 0.875 0.5 0.875 0.5 1.0 0.46875 1.0 0.5 0.875 0.5 1.0 0.46875 1.0 0.46875 0.875 0.46875 0.96875 0.5 0.96875 0.5 1.0 0.46875 1.0 0.09375 0.9375 0.15625 0.9375 0.15625 1.0 0.09375 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.46875 0.84375 0.5 0.84375 0.5 1.0 0.46875 1.0 0.46875 0.9375 0.5 0.9375 0.5 1.0 0.46875 1.0 0.46875 1.0 0.5 1.0 0.5 0.9375 0.46875 0.9375 0.46875 1.0 0.5 1.0 0.5 0.84375 0.46875 0.84375 0.09375 1.0 0.15625 1.0 0.15625 0.9375 0.09375 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 0.3125 0.0 0.53125 0.125 0.53125 0.125 0.3125 0.3125 0.6875 0.3125 0.84375 0.40625 0.84375 0.40625 0.6875 0.46875 0.78125 0.46875 1.0 0.53125 1.0 0.53125 0.78125 0.46875 1.0 0.5 1.0 0.5 0.875 0.46875 0.875 0.46875 0.875 0.46875 1.0 0.5 1.0 0.5 0.875 0.46875 1.0 0.5 1.0 0.5 0.96875 0.46875 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.90625 0.0 0.90625 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.46875 0.6875 0.46875 1.0 0.53125 1.0 0.53125 0.6875 0.46875 0.6875 0.46875 1.0 0.5 1.0 0.5 0.6875 0.46875 1.0 0.53125 1.0 0.53125 0.84375 0.46875 0.84375 0.46875 1.0 0.53125 1.0 0.53125 0.84375 0.46875 0.84375 0.46875 1.0 0.5 1.0 0.5 0.9375 0.46875 0.9375 0.46875 1.0 0.5 1.0 0.5 0.9375 0.46875 0.9375 0.09375 0.65625 0.09375 0.84375 0.25 0.84375 0.25 0.65625 0.46875 0.75 0.46875 1.0 0.53125 1.0 0.53125 0.75 0.09375 1.0 0.15625 1.0 0.15625 0.9375 0.09375 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.90625 0.0 0.90625 0.0 1.0 0.03125 1.0 0.03125 0.90625 0.0 0.90625 0.09375 0.90625 0.15625 0.90625 0.15625 1.0 0.09375 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.0 0.90625 0.03125 0.90625 0.03125 1.0 0.0 1.0 0.0 0.90625 0.03125 0.90625 0.03125 1.0 0.0 1.0 0.0 0.21875 0.3125 0.21875 0.3125 0.53125 0.0 0.53125 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.125 0.21875 0.125 0.53125 0.0 0.53125 0.0 0.21875 0.6875 0.875 0.6875 1.0 0.59375 1.0 0.59375 0.875 0.53125 0.875 0.53125 1.0 0.46875 1.0 0.46875 0.875 0.5 0.8125 0.5 1.0 0.46875 1.0 0.46875 0.8125 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.46875 0.96875 0.5 0.96875 0.5 1.0 0.46875 1.0 0.46875 0.96875 0.5 0.96875 0.5 1.0 0.46875 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.5 0.8125 0.5 1.0 0.46875 1.0 0.46875 0.8125 0.46875 0.75 0.46875 1.0 0.5 1.0 0.5 0.75 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 0.21875 0.0 0.53125 0.21875 0.53125 0.21875 0.21875 </float_array>
+          <technique_common>
+            <accessor count="252" source="#Cabeza-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cabeza-Normal">
+          <float_array count="18" id="Cabeza-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#Cabeza-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Cabeza-Vertices">
+          <input semantic="POSITION" source="#Cabeza-Pos"/>
+        </vertices>
+        <polylist count="63" material="Cabeza-Material">
+          <input offset="0" semantic="VERTEX" source="#Cabeza-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#Cabeza-UV"/>
+          <input offset="2" semantic="NORMAL" source="#Cabeza-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 0 9 9 0 10 10 0 11 11 0 12 12 0 13 13 0 14 14 0 15 15 0 16 16 0 17 17 0 18 18 0 19 19 0 20 20 0 21 21 0 22 22 0 23 23 0 24 24 0 25 25 0 26 26 0 27 27 0 28 28 0 29 29 0 30 30 0 31 31 0 32 32 0 33 33 0 34 34 0 35 35 0 36 36 0 37 37 0 38 38 0 39 39 0 40 40 0 41 41 0 42 42 0 43 43 0 44 44 0 45 45 0 46 46 0 47 47 0 48 48 1 49 49 1 50 50 1 51 51 1 52 52 1 53 53 1 54 54 1 55 55 1 56 56 1 57 57 1 58 58 1 59 59 1 60 60 1 61 61 1 62 62 1 63 63 1 64 64 1 65 65 1 66 66 1 67 67 1 68 68 1 69 69 1 70 70 1 71 71 1 72 72 1 73 73 1 74 74 1 75 75 1 76 76 1 77 77 1 78 78 1 79 79 1 80 80 1 81 81 1 82 82 1 83 83 1 84 84 1 85 85 1 86 86 1 87 87 1 88 88 1 89 89 1 90 90 1 91 91 1 92 92 1 93 93 1 94 94 1 95 95 1 96 96 2 97 97 2 98 98 2 99 99 2 100 100 2 101 101 2 102 102 2 103 103 2 104 104 2 105 105 2 106 106 2 107 107 2 108 108 2 109 109 2 110 110 2 111 111 2 112 112 2 113 113 2 114 114 2 115 115 2 116 116 2 117 117 2 118 118 2 119 119 2 120 120 2 121 121 2 122 122 2 123 123 2 124 124 2 125 125 2 126 126 2 127 127 2 128 128 2 129 129 2 130 130 2 131 131 2 132 132 2 133 133 2 134 134 2 135 135 2 136 136 2 137 137 2 138 138 2 139 139 2 140 140 2 141 141 2 142 142 2 143 143 2 144 144 2 145 145 2 146 146 2 147 147 2 148 148 2 149 149 2 150 150 2 151 151 2 152 152 3 153 153 3 154 154 3 155 155 3 156 156 3 157 157 3 158 158 3 159 159 3 160 160 3 161 161 3 162 162 3 163 163 3 164 164 3 165 165 3 166 166 3 167 167 3 168 168 3 169 169 3 170 170 3 171 171 3 172 172 3 173 173 3 174 174 3 175 175 3 176 176 4 177 177 4 178 178 4 179 179 4 180 180 4 181 181 4 182 182 4 183 183 4 184 184 4 185 185 4 186 186 4 187 187 4 188 188 4 189 189 4 190 190 4 191 191 4 192 192 4 193 193 4 194 194 4 195 195 4 196 196 4 197 197 4 198 198 4 199 199 4 200 200 4 201 201 4 202 202 4 203 203 4 204 204 4 205 205 4 206 206 4 207 207 4 208 208 4 209 209 4 210 210 4 211 211 4 212 212 4 213 213 4 214 214 4 215 215 4 216 216 4 217 217 4 218 218 4 219 219 4 220 220 4 221 221 4 222 222 4 223 223 4 224 224 4 225 225 4 226 226 4 227 227 4 228 228 5 229 229 5 230 230 5 231 231 5 232 232 5 233 233 5 234 234 5 235 235 5 236 236 5 237 237 5 238 238 5 239 239 5 240 240 5 241 241 5 242 242 5 243 243 5 244 244 5 245 245 5 246 246 5 247 247 5 248 248 5 249 249 5 250 250 5 251 251 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="DerAleta-Geom" name="DerAleta-Geom">
+      <mesh>
+        <source id="DerAleta-Pos">
+          <float_array count="72" id="DerAleta-Pos-array">-2.0 -1.0 2.0 -2.0 1.0 2.0 -2.0 1.0 -2.0 -2.0 -1.0 -2.0 2.0 -1.0 -2.0 2.0 1.0 -2.0 2.0 1.0 2.0 2.0 -1.0 2.0 -2.0 -1.0 -2.0 2.0 -1.0 -2.0 2.0 -1.0 2.0 -2.0 -1.0 2.0 -2.0 1.0 2.0 2.0 1.0 2.0 2.0 1.0 -2.0 -2.0 1.0 -2.0 -2.0 1.0 -2.0 2.0 1.0 -2.0 2.0 -1.0 -2.0 -2.0 -1.0 -2.0 -2.0 -1.0 2.0 2.0 -1.0 2.0 2.0 1.0 2.0 -2.0 1.0 2.0 </float_array>
+          <technique_common>
+            <accessor count="24" source="#DerAleta-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerAleta-UV">
+          <float_array count="48" id="DerAleta-UV-array">0.375 0.75 0.5 0.75 0.5 1.0 0.375 1.0 0.375 1.0 0.5 1.0 0.5 0.75 0.375 0.75 0.0 0.625 0.25 0.625 0.25 0.375 0.0 0.375 0.0 0.75 0.25 0.75 0.25 1.0 0.0 1.0 0.5 0.75 0.5 1.0 0.375 1.0 0.375 0.75 0.375 0.75 0.375 1.0 0.5 1.0 0.5 0.75 </float_array>
+          <technique_common>
+            <accessor count="24" source="#DerAleta-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerAleta-Normal">
+          <float_array count="18" id="DerAleta-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#DerAleta-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="DerAleta-Vertices">
+          <input semantic="POSITION" source="#DerAleta-Pos"/>
+        </vertices>
+        <polylist count="6" material="DerAleta-Material">
+          <input offset="0" semantic="VERTEX" source="#DerAleta-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#DerAleta-UV"/>
+          <input offset="2" semantic="NORMAL" source="#DerAleta-Normal"/>
+          <vcount>4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 1 5 5 1 6 6 1 7 7 1 8 8 2 9 9 2 10 10 2 11 11 2 12 12 3 13 13 3 14 14 3 15 15 3 16 16 4 17 17 4 18 18 4 19 19 4 20 20 5 21 21 5 22 22 5 23 23 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="DerMano-Geom" name="DerMano-Geom">
+      <mesh>
+        <source id="DerMano-Pos">
+          <float_array count="120" id="DerMano-Pos-array">-2.5 -1.0 2.0 -2.5 1.0 2.0 -2.5 1.0 -1.0 -2.5 -1.0 -1.0 -1.5 -1.0 -1.0 -1.5 1.0 -1.0 -1.5 1.0 -2.0 -1.5 -1.0 -2.0 2.5 -1.0 -2.0 2.5 1.0 -2.0 2.5 1.0 2.0 2.5 -1.0 2.0 -1.5 -1.0 -2.0 2.5 -1.0 -2.0 2.5 -1.0 2.0 -1.5 -1.0 2.0 -2.5 -1.0 -1.0 -1.5 -1.0 -1.0 -1.5 -1.0 2.0 -2.5 -1.0 2.0 -1.5 1.0 2.0 2.5 1.0 2.0 2.5 1.0 -2.0 -1.5 1.0 -2.0 -2.5 1.0 2.0 -1.5 1.0 2.0 -1.5 1.0 -1.0 -2.5 1.0 -1.0 -1.5 1.0 -2.0 2.5 1.0 -2.0 2.5 -1.0 -2.0 -1.5 -1.0 -2.0 -2.5 1.0 -1.0 -1.5 1.0 -1.0 -1.5 -1.0 -1.0 -2.5 -1.0 -1.0 -2.5 -1.0 2.0 2.5 -1.0 2.0 2.5 1.0 2.0 -2.5 1.0 2.0 </float_array>
+          <technique_common>
+            <accessor count="40" source="#DerMano-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerMano-UV">
+          <float_array count="80" id="DerMano-UV-array">0.4375 0.8125 0.5625 0.8125 0.5625 1.0 0.4375 1.0 0.75 0.875 0.75 1.0 0.6875 1.0 0.6875 0.875 0.4375 1.0 0.5625 1.0 0.5625 0.75 0.4375 0.75 0.0 0.5625 0.25 0.5625 0.25 0.3125 0.0 0.3125 0.4375 1.0 0.5 1.0 0.5 0.8125 0.4375 0.8125 0.0 0.75 0.25 0.75 0.25 1.0 0.0 1.0 0.0 0.8125 0.0625 0.8125 0.0625 1.0 0.0 1.0 0.5625 0.75 0.5625 1.0 0.4375 1.0 0.4375 0.75 0.4375 0.4375 0.5 0.4375 0.5 0.5625 0.4375 0.5625 0.625 0.25 0.625 0.5625 0.75 0.5625 0.75 0.25 </float_array>
+          <technique_common>
+            <accessor count="40" source="#DerMano-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerMano-Normal">
+          <float_array count="18" id="DerMano-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#DerMano-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="DerMano-Vertices">
+          <input semantic="POSITION" source="#DerMano-Pos"/>
+        </vertices>
+        <polylist count="10" material="DerMano-Material">
+          <input offset="0" semantic="VERTEX" source="#DerMano-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#DerMano-UV"/>
+          <input offset="2" semantic="NORMAL" source="#DerMano-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 1 9 9 1 10 10 1 11 11 1 12 12 2 13 13 2 14 14 2 15 15 2 16 16 2 17 17 2 18 18 2 19 19 2 20 20 3 21 21 3 22 22 3 23 23 3 24 24 3 25 25 3 26 26 3 27 27 3 28 28 4 29 29 4 30 30 4 31 31 4 32 32 4 33 33 4 34 34 4 35 35 4 36 36 5 37 37 5 38 38 5 39 39 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="IzqAleta-Geom" name="IzqAleta-Geom">
+      <mesh>
+        <source id="IzqAleta-Pos">
+          <float_array count="72" id="IzqAleta-Pos-array">-2.0 -1.0 2.0 -2.0 1.0 2.0 -2.0 1.0 -2.0 -2.0 -1.0 -2.0 2.0 -1.0 -2.0 2.0 1.0 -2.0 2.0 1.0 2.0 2.0 -1.0 2.0 -2.0 -1.0 -2.0 2.0 -1.0 -2.0 2.0 -1.0 2.0 -2.0 -1.0 2.0 -2.0 1.0 2.0 2.0 1.0 2.0 2.0 1.0 -2.0 -2.0 1.0 -2.0 -2.0 1.0 -2.0 2.0 1.0 -2.0 2.0 -1.0 -2.0 -2.0 -1.0 -2.0 -2.0 -1.0 2.0 2.0 -1.0 2.0 2.0 1.0 2.0 -2.0 1.0 2.0 </float_array>
+          <technique_common>
+            <accessor count="24" source="#IzqAleta-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqAleta-UV">
+          <float_array count="48" id="IzqAleta-UV-array">0.0 0.375 0.125 0.375 0.125 0.625 0.0 0.625 0.0 0.625 0.125 0.625 0.125 0.375 0.0 0.375 0.375 1.0 0.625 1.0 0.625 0.75 0.375 0.75 0.0 0.75 0.25 0.75 0.25 1.0 0.0 1.0 0.125 0.375 0.125 0.625 0.0 0.625 0.0 0.375 0.0 0.375 0.0 0.625 0.125 0.625 0.125 0.375 </float_array>
+          <technique_common>
+            <accessor count="24" source="#IzqAleta-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqAleta-Normal">
+          <float_array count="18" id="IzqAleta-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#IzqAleta-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="IzqAleta-Vertices">
+          <input semantic="POSITION" source="#IzqAleta-Pos"/>
+        </vertices>
+        <polylist count="6" material="IzqAleta-Material">
+          <input offset="0" semantic="VERTEX" source="#IzqAleta-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#IzqAleta-UV"/>
+          <input offset="2" semantic="NORMAL" source="#IzqAleta-Normal"/>
+          <vcount>4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 1 5 5 1 6 6 1 7 7 1 8 8 2 9 9 2 10 10 2 11 11 2 12 12 3 13 13 3 14 14 3 15 15 3 16 16 4 17 17 4 18 18 4 19 19 4 20 20 5 21 21 5 22 22 5 23 23 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="IzqMano-Geom" name="IzqMano-Geom">
+      <mesh>
+        <source id="IzqMano-Pos">
+          <float_array count="120" id="IzqMano-Pos-array">-2.5 -1.0 2.0 -2.5 1.0 2.0 -2.5 1.0 -2.0 -2.5 -1.0 -2.0 1.5 -1.0 -2.0 1.5 1.0 -2.0 1.5 1.0 -1.0 1.5 -1.0 -1.0 2.5 -1.0 -1.0 2.5 1.0 -1.0 2.5 1.0 2.0 2.5 -1.0 2.0 -2.5 -1.0 -2.0 1.5 -1.0 -2.0 1.5 -1.0 2.0 -2.5 -1.0 2.0 1.5 -1.0 -1.0 2.5 -1.0 -1.0 2.5 -1.0 2.0 1.5 -1.0 2.0 -2.5 1.0 2.0 1.5 1.0 2.0 1.5 1.0 -2.0 -2.5 1.0 -2.0 1.5 1.0 2.0 2.5 1.0 2.0 2.5 1.0 -1.0 1.5 1.0 -1.0 -2.5 1.0 -2.0 1.5 1.0 -2.0 1.5 -1.0 -2.0 -2.5 -1.0 -2.0 1.5 1.0 -1.0 2.5 1.0 -1.0 2.5 -1.0 -1.0 1.5 -1.0 -1.0 -2.5 -1.0 2.0 2.5 -1.0 2.0 2.5 1.0 2.0 -2.5 1.0 2.0 </float_array>
+          <technique_common>
+            <accessor count="40" source="#IzqMano-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqMano-UV">
+          <float_array count="80" id="IzqMano-UV-array">0.625 0.75 0.75 0.75 0.75 1.0 0.625 1.0 0.4375 0.875 0.4375 1.0 0.5 1.0 0.5 0.875 0.625 1.0 0.75 1.0 0.75 0.8125 0.625 0.8125 0.0 0.5625 0.25 0.5625 0.25 0.3125 0.0 0.3125 0.0 0.5625 0.0625 0.5625 0.0625 0.375 0.0 0.375 0.0 0.75 0.25 0.75 0.25 1.0 0.0 1.0 0.0 0.8125 0.0625 0.8125 0.0625 1.0 0.0 1.0 0.75 0.75 0.75 1.0 0.625 1.0 0.625 0.75 0.4375 0.4375 0.5 0.4375 0.5 0.5625 0.4375 0.5625 0.625 0.6875 0.625 1.0 0.75 1.0 0.75 0.6875 </float_array>
+          <technique_common>
+            <accessor count="40" source="#IzqMano-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqMano-Normal">
+          <float_array count="18" id="IzqMano-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#IzqMano-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="IzqMano-Vertices">
+          <input semantic="POSITION" source="#IzqMano-Pos"/>
+        </vertices>
+        <polylist count="10" material="IzqMano-Material">
+          <input offset="0" semantic="VERTEX" source="#IzqMano-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#IzqMano-UV"/>
+          <input offset="2" semantic="NORMAL" source="#IzqMano-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 1 5 5 1 6 6 1 7 7 1 8 8 1 9 9 1 10 10 1 11 11 1 12 12 2 13 13 2 14 14 2 15 15 2 16 16 2 17 17 2 18 18 2 19 19 2 20 20 3 21 21 3 22 22 3 23 23 3 24 24 3 25 25 3 26 26 3 27 27 3 28 28 4 29 29 4 30 30 4 31 31 4 32 32 4 33 33 4 34 34 4 35 35 4 36 36 5 37 37 5 38 38 5 39 39 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="DerPie-Geom" name="DerPie-Geom">
+      <mesh>
+        <source id="DerPie-Pos">
+          <float_array count="120" id="DerPie-Pos-array">-1.0 -1.5 1.5 -1.0 -0.49999997 1.5 -1.0 -0.49999997 -1.5 -1.0 -1.5 -1.5 -1.0 -0.49999997 1.5 -1.0 1.5 1.5 -1.0 1.5 0.50000006 -1.0 -0.49999997 0.50000006 1.0 -1.5 -1.5 1.0 -0.49999997 -1.5 1.0 -0.49999997 1.5 1.0 -1.5 1.5 1.0 -0.49999997 0.50000006 1.0 1.5 0.50000006 1.0 1.5 1.5 1.0 -0.49999997 1.5 -1.0 -1.5 -1.5 1.0 -1.5 -1.5 1.0 -1.5 1.5 -1.0 -1.5 1.5 -1.0 -0.49999997 0.50000006 1.0 -0.49999997 0.50000006 1.0 -0.49999997 -1.5 -1.0 -0.49999997 -1.5 -1.0 1.5 1.5 1.0 1.5 1.5 1.0 1.5 0.50000006 -1.0 1.5 0.50000006 -1.0 -0.49999997 -1.5 1.0 -0.49999997 -1.5 1.0 -1.5 -1.5 -1.0 -1.5 -1.5 -1.0 1.5 0.50000006 1.0 1.5 0.50000006 1.0 -0.49999997 0.50000006 -1.0 -0.49999997 0.50000006 -1.0 -1.5 1.5 1.0 -1.5 1.5 1.0 1.5 1.5 -1.0 1.5 1.5 </float_array>
+          <technique_common>
+            <accessor count="40" source="#DerPie-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerPie-UV">
+          <float_array count="80" id="DerPie-UV-array">0.625 0.8125 0.6875 0.8125 0.6875 1.0 0.625 1.0 0.375 0.875 0.375 1.0 0.3125 1.0 0.3125 0.875 0.625 1.0 0.6875 1.0 0.6875 0.8125 0.625 0.8125 0.3125 0.875 0.3125 1.0 0.375 1.0 0.375 0.875 0.625 0.6875 0.75 0.6875 0.75 0.5 0.625 0.5 0.0 0.875 0.125 0.875 0.125 1.0 0.0 1.0 0.375 0.875 0.375 1.0 0.3125 1.0 0.3125 0.875 0.375 0.5625 0.375 0.6875 0.3125 0.6875 0.3125 0.5625 0.0 0.5625 0.125 0.5625 0.125 0.6875 0.0 0.6875 0.0 0.6875 0.125 0.6875 0.125 0.5 0.0 0.5 </float_array>
+          <technique_common>
+            <accessor count="40" source="#DerPie-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerPie-Normal">
+          <float_array count="18" id="DerPie-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#DerPie-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="DerPie-Vertices">
+          <input semantic="POSITION" source="#DerPie-Pos"/>
+        </vertices>
+        <polylist count="10" material="DerPie-Material">
+          <input offset="0" semantic="VERTEX" source="#DerPie-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#DerPie-UV"/>
+          <input offset="2" semantic="NORMAL" source="#DerPie-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 1 9 9 1 10 10 1 11 11 1 12 12 1 13 13 1 14 14 1 15 15 1 16 16 2 17 17 2 18 18 2 19 19 2 20 20 3 21 21 3 22 22 3 23 23 3 24 24 3 25 25 3 26 26 3 27 27 3 28 28 4 29 29 4 30 30 4 31 31 4 32 32 4 33 33 4 34 34 4 35 35 4 36 36 5 37 37 5 38 38 5 39 39 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="IzqPie-Geom" name="IzqPie-Geom">
+      <mesh>
+        <source id="IzqPie-Pos">
+          <float_array count="120" id="IzqPie-Pos-array">-1.0 -1.5 1.5 -1.0 -0.49999997 1.5 -1.0 -0.49999997 -1.5 -1.0 -1.5 -1.5 -1.0 -0.49999997 1.5 -1.0 1.5 1.5 -1.0 1.5 0.50000006 -1.0 -0.49999997 0.50000006 1.0 -1.5 -1.5 1.0 -0.49999997 -1.5 1.0 -0.49999997 1.5 1.0 -1.5 1.5 1.0 -0.49999997 0.50000006 1.0 1.5 0.50000006 1.0 1.5 1.5 1.0 -0.49999997 1.5 -1.0 -1.5 -1.5 1.0 -1.5 -1.5 1.0 -1.5 1.5 -1.0 -1.5 1.5 -1.0 -0.49999997 0.50000006 1.0 -0.49999997 0.50000006 1.0 -0.49999997 -1.5 -1.0 -0.49999997 -1.5 -1.0 1.5 1.5 1.0 1.5 1.5 1.0 1.5 0.50000006 -1.0 1.5 0.50000006 -1.0 -0.49999997 -1.5 1.0 -0.49999997 -1.5 1.0 -1.5 -1.5 -1.0 -1.5 -1.5 -1.0 1.5 0.50000006 1.0 1.5 0.50000006 1.0 -0.49999997 0.50000006 -1.0 -0.49999997 0.50000006 -1.0 -1.5 1.5 1.0 -1.5 1.5 1.0 1.5 1.5 -1.0 1.5 1.5 </float_array>
+          <technique_common>
+            <accessor count="40" source="#IzqPie-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqPie-UV">
+          <float_array count="80" id="IzqPie-UV-array">0.0 0.5 0.0625 0.5 0.0625 0.6875 0.0 0.6875 0.375 0.875 0.375 1.0 0.3125 1.0 0.3125 0.875 0.0 0.6875 0.0625 0.6875 0.0625 0.5 0.0 0.5 0.3125 0.875 0.3125 1.0 0.375 1.0 0.375 0.875 0.3125 0.6875 0.4375 0.6875 0.4375 0.5 0.3125 0.5 0.0 0.875 0.125 0.875 0.125 1.0 0.0 1.0 0.375 0.875 0.375 1.0 0.3125 1.0 0.3125 0.875 0.6875 0.5625 0.6875 0.6875 0.625 0.6875 0.625 0.5625 0.625 0.875 0.75 0.875 0.75 1.0 0.625 1.0 0.625 1.0 0.75 1.0 0.75 0.8125 0.625 0.8125 </float_array>
+          <technique_common>
+            <accessor count="40" source="#IzqPie-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqPie-Normal">
+          <float_array count="18" id="IzqPie-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#IzqPie-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="IzqPie-Vertices">
+          <input semantic="POSITION" source="#IzqPie-Pos"/>
+        </vertices>
+        <polylist count="10" material="IzqPie-Material">
+          <input offset="0" semantic="VERTEX" source="#IzqPie-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#IzqPie-UV"/>
+          <input offset="2" semantic="NORMAL" source="#IzqPie-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 1 9 9 1 10 10 1 11 11 1 12 12 1 13 13 1 14 14 1 15 15 1 16 16 2 17 17 2 18 18 2 19 19 2 20 20 3 21 21 3 22 22 3 23 23 3 24 24 3 25 25 3 26 26 3 27 27 3 28 28 4 29 29 4 30 30 4 31 31 4 32 32 4 33 33 4 34 34 4 35 35 4 36 36 5 37 37 5 38 38 5 39 39 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations>
+    <animation id="Body-global-anim" name="Body-global-anim">
+      <animation>
+        <source id="Body-global-anim-inSource-TIME">
+          <float_array count="25" id="Body-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Body-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Body-global-anim-interpolation">
+          <Name_array count="25" id="Body-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#Body-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Body-global-anim-outSource-global">
+          <float_array count="400" id="Body-global-anim-outSource-global-array">1.0 0.0 0.0 0.0 0.0 -0.0871557 0.9961947 4.000091 0.0 -0.9961947 -0.0871557 5.0001607 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 -0.07990894 0.9968022 4.000091 0.0 -0.9968022 -0.07990894 5.0001607 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 -0.07265797 0.99735695 4.000091 0.0 -0.99735695 -0.07265797 5.0001607 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 -0.06540316 0.997859 4.000091 0.0 -0.997859 -0.06540316 5.0001607 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 -0.058144808 0.99830824 4.000091 0.0 -0.99830824 -0.058144808 5.0001607 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 -0.05088353 0.99870455 4.000091 0.0 -0.99870455 -0.05088353 5.0001607 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 -0.043619365 0.99904835 4.000091 0.0 -0.99904835 -0.043619365 5.0001607 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 -0.036352992 0.99933916 4.000091 0.0 -0.99933916 -0.036352992 5.0001607 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 -0.029084682 0.99957705 4.000091 0.0 -0.99957705 -0.029084682 5.0001607 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 -0.021814823 0.99976206 4.000091 0.0 -0.99976206 -0.021814823 5.0001607 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 -0.014543891 0.9998942 4.000091 0.0 -0.9998942 -0.014543891 5.0001607 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 -0.0072721243 0.9999736 4.000091 0.0 -0.9999736 -0.0072721243 5.0001607 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.0 1.0000001 4.000091 0.0 -1.0000001 0.0 5.0001607 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 -0.0072721243 0.9999736 4.000091 0.0 -0.9999736 -0.0072721243 5.0001607 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 -0.014543891 0.9998942 4.000091 0.0 -0.9998942 -0.014543891 5.0001607 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 -0.021814823 0.99976206 4.000091 0.0 -0.99976206 -0.021814823 5.0001607 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 -0.029084682 0.99957705 4.000091 0.0 -0.99957705 -0.029084682 5.0001607 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 -0.03635305 0.99933904 4.000091 0.0 -0.99933904 -0.03635305 5.0001607 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 -0.043619365 0.99904835 4.000091 0.0 -0.99904835 -0.043619365 5.0001607 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 -0.050883442 0.9987047 4.000091 0.0 -0.9987047 -0.050883442 5.0001607 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 -0.058144897 0.9983082 4.000091 0.0 -0.9983082 -0.058144897 5.0001607 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 -0.06540316 0.997859 4.000091 0.0 -0.997859 -0.06540316 5.0001607 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 -0.07265797 0.99735695 4.000091 0.0 -0.99735695 -0.07265797 5.0001607 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 -0.07990894 0.9968022 4.000091 0.0 -0.9968022 -0.07990894 5.0001607 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 -0.0871557 0.9961947 4.000091 0.0 -0.9961947 -0.0871557 5.0001607 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Body-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Body-global-anim-globalSampler">
+          <input semantic="INPUT" source="#Body-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Body-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#Body-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#Body-global-anim-globalSampler" target="Body-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Body-local-anim" name="Body-local-anim">
+      <animation>
+        <source id="Body-local-anim-inSource-TIME">
+          <float_array count="25" id="Body-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Body-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Body-local-anim-interpolation">
+          <Name_array count="25" id="Body-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#Body-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Body-local-anim-outSource-local">
+          <float_array count="400" id="Body-local-anim-outSource-local-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Body-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Body-local-anim-localSampler">
+          <input semantic="INPUT" source="#Body-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Body-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#Body-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#Body-local-anim-localSampler" target="Body-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Cuerpo-global-anim" name="Cuerpo-global-anim">
+      <animation>
+        <source id="Cuerpo-global-anim-inSource-TIME">
+          <float_array count="25" id="Cuerpo-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cuerpo-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cuerpo-global-anim-interpolation">
+          <Name_array count="25" id="Cuerpo-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#Cuerpo-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cuerpo-global-anim-outSource-global">
+          <float_array count="400" id="Cuerpo-global-anim-outSource-global-array">1.0 0.0 0.0 0.0 0.0 0.9961947 -0.08715603 3.0 0.0 0.08715603 0.9961947 2.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.99680215 -0.07990932 3.0 0.0 0.07990932 0.99680215 2.0 0.0 0.0 0.0 1.0 1.0000002 0.0 0.0 0.0 0.0 0.9973571 -0.0726584 3.0 0.0 0.0726584 0.9973571 2.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.9978589 -0.0654036 3.0 0.0 0.0654036 0.9978589 2.0 0.0 0.0 0.0 1.0 0.99999994 0.0 0.0 0.0 0.0 0.9983081 -0.05814537 3.0 0.0 0.05814537 0.9983081 2.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.99870473 -0.050884068 3.0 0.0 0.050884068 0.99870473 2.0 0.0 0.0 0.0 1.0 0.99999994 0.0 0.0 0.0 0.0 0.9990482 -0.043620065 3.0 0.0 0.043620065 0.9990482 2.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.99933904 -0.036353752 3.0 0.0 0.036353752 0.99933904 2.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.999577 -0.029085524 3.0 0.0 0.029085524 0.999577 2.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.99976206 -0.021815754 3.0 0.0 0.021815754 0.99976206 2.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.9998943 -0.014544841 3.0 0.0 0.014544841 0.9998943 2.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.99997354 -0.007273136 3.0 0.0 0.007273136 0.99997354 2.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 -1.065433E-6 3.0 0.0 1.065433E-6 1.0 2.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.99997354 -0.0072731846 3.0 0.0 0.0072731846 0.99997354 2.0 0.0 0.0 0.0 1.0 1.0000002 0.0 0.0 0.0 0.0 0.99989444 -0.014544922 3.0 0.0 0.014544922 0.99989444 2.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.99976206 -0.021815885 3.0 0.0 0.021815885 0.99976206 2.0 0.0 0.0 0.0 1.0 0.99999994 0.0 0.0 0.0 0.0 0.99957687 -0.029085692 3.0 0.0 0.029085692 0.99957687 2.0 0.0 0.0 0.0 1.0 1.0000002 0.0 0.0 0.0 0.0 0.99933916 -0.03635398 3.0 0.0 0.03635398 0.99933916 2.0 0.0 0.0 0.0 1.0 0.99999994 0.0 0.0 0.0 0.0 0.9990482 -0.04362032 3.0 0.0 0.04362032 0.9990482 2.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.9987046 -0.050884366 3.0 0.0 0.050884366 0.9987046 2.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.9983082 -0.058145724 3.0 0.0 0.058145724 0.9983082 2.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.9978589 -0.065404 3.0 0.0 0.065404 0.9978589 2.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.99735695 -0.072658814 3.0 0.0 0.072658814 0.99735695 2.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.99680215 -0.079909794 3.0 0.0 0.079909794 0.99680215 2.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.99619466 -0.08715655 3.0 0.0 0.08715655 0.99619466 2.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cuerpo-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Cuerpo-global-anim-globalSampler">
+          <input semantic="INPUT" source="#Cuerpo-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Cuerpo-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#Cuerpo-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#Cuerpo-global-anim-globalSampler" target="Cuerpo-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Cuerpo-local-anim" name="Cuerpo-local-anim">
+      <animation>
+        <source id="Cuerpo-local-anim-inSource-TIME">
+          <float_array count="25" id="Cuerpo-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cuerpo-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cuerpo-local-anim-interpolation">
+          <Name_array count="25" id="Cuerpo-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#Cuerpo-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cuerpo-local-anim-outSource-local">
+          <float_array count="400" id="Cuerpo-local-anim-outSource-local-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cuerpo-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Cuerpo-local-anim-localSampler">
+          <input semantic="INPUT" source="#Cuerpo-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Cuerpo-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#Cuerpo-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#Cuerpo-local-anim-localSampler" target="Cuerpo-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Cabeza-global-anim" name="Cabeza-global-anim">
+      <animation>
+        <source id="Cabeza-global-anim-inSource-TIME">
+          <float_array count="25" id="Cabeza-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cabeza-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cabeza-global-anim-interpolation">
+          <Name_array count="25" id="Cabeza-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#Cabeza-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cabeza-global-anim-outSource-global">
+          <float_array count="400" id="Cabeza-global-anim-outSource-global-array">1.0 0.0 0.0 0.0 0.0 0.34202012 -0.9396927 13.0 0.0 0.9396927 0.34202012 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.32143936 -0.94693017 13.0 0.0 0.94693017 0.32143936 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.30070576 -0.95371693 13.0 0.0 0.95371693 0.30070576 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.27982894 -0.96004987 13.0 0.0 0.96004987 0.27982894 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.258819 -0.9659258 13.0 0.0 0.9659258 0.258819 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.23768583 -0.971342 13.0 0.0 0.971342 0.23768583 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.21643949 -0.97629607 13.0 0.0 0.97629607 0.21643949 -1.0 0.0 0.0 0.0 1.0 1.0000002 0.0 0.0 0.0 0.0 0.19509023 -0.9807855 13.0 0.0 0.9807855 0.19509023 -1.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.17364803 -0.98480785 13.0 0.0 0.98480785 0.17364803 -1.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.15212333 -0.98836166 13.0 0.0 0.98836166 0.15212333 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.13052607 -0.9914449 13.0 0.0 0.9914449 0.13052607 -1.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.10886669 -0.99405646 13.0 0.0 0.99405646 0.10886669 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.08715558 -0.9961947 13.0 0.0 0.9961947 0.08715558 -1.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.10886669 -0.99405646 13.0 0.0 0.99405646 0.10886669 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.13052607 -0.9914449 13.0 0.0 0.9914449 0.13052607 -1.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.15212333 -0.98836166 13.0 0.0 0.98836166 0.15212333 -1.0 0.0 0.0 0.0 1.0 1.0000002 0.0 0.0 0.0 0.0 0.17364815 -0.98480797 13.0 0.0 0.98480797 0.17364815 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.19509023 -0.9807853 13.0 0.0 0.9807853 0.19509023 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.21643949 -0.97629607 13.0 0.0 0.97629607 0.21643949 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.23768583 -0.971342 13.0 0.0 0.971342 0.23768583 -1.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 0.0 0.0 0.25881907 -0.965926 13.0 0.0 0.965926 0.25881907 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.27982894 -0.96004987 13.0 0.0 0.96004987 0.27982894 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.30070576 -0.95371693 13.0 0.0 0.95371693 0.30070576 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.32143936 -0.94693017 13.0 0.0 0.94693017 0.32143936 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.34202012 -0.9396927 13.0 0.0 0.9396927 0.34202012 -1.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cabeza-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Cabeza-global-anim-globalSampler">
+          <input semantic="INPUT" source="#Cabeza-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Cabeza-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#Cabeza-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#Cabeza-global-anim-globalSampler" target="Cabeza-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Cabeza-local-anim" name="Cabeza-local-anim">
+      <animation>
+        <source id="Cabeza-local-anim-inSource-TIME">
+          <float_array count="25" id="Cabeza-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cabeza-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cabeza-local-anim-interpolation">
+          <Name_array count="25" id="Cabeza-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#Cabeza-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cabeza-local-anim-outSource-local">
+          <float_array count="400" id="Cabeza-local-anim-outSource-local-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Cabeza-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Cabeza-local-anim-localSampler">
+          <input semantic="INPUT" source="#Cabeza-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Cabeza-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#Cabeza-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#Cabeza-local-anim-localSampler" target="Cabeza-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="DerAleta-global-anim" name="DerAleta-global-anim">
+      <animation>
+        <source id="DerAleta-global-anim-inSource-TIME">
+          <float_array count="25" id="DerAleta-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#DerAleta-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerAleta-global-anim-interpolation">
+          <Name_array count="25" id="DerAleta-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#DerAleta-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerAleta-global-anim-outSource-global">
+          <float_array count="400" id="DerAleta-global-anim-outSource-global-array">1.0 0.0 0.0 -5.0 0.0 0.49999994 -0.8660255 11.0 0.0 0.8660255 0.49999994 -1.0 0.0 0.0 0.0 1.0 0.999577 -0.02908474 9.313226E-10 -5.0 0.014542365 0.49978837 -0.8660255 11.0 0.025188126 0.8656592 0.4999999 -1.0 0.0 0.0 0.0 1.0 0.9983082 -0.05814488 1.8626451E-9 -5.0 0.02907243 0.49915394 -0.8660255 11.0 0.050354943 0.8645603 0.49999988 -1.0 0.0 0.0 0.0 1.0 0.9961947 -0.087155804 0.0 -5.0 0.043577895 0.4980972 -0.8660255 11.0 0.07547915 0.86272997 0.49999988 -1.0 0.0 0.0 0.0 1.0 0.99323845 -0.11609301 0.0 -5.0 0.05804649 0.49661914 -0.86602557 11.0 0.1005395 0.86016977 0.5 -1.0 0.0 0.0 0.0 1.0 0.9894417 -0.14493194 0.0 -5.0 0.072465956 0.4947207 -0.8660255 11.0 0.12551476 0.8568817 0.49999988 -1.0 0.0 0.0 0.0 1.0 0.9848078 -0.17364831 0.0 -5.0 0.086824134 0.49240378 -0.8660255 11.0 0.15038386 0.8528686 0.49999988 -1.0 0.0 0.0 0.0 1.0 0.97934073 -0.20221773 7.4505806E-9 -5.0 0.10110885 0.48967028 -0.8660255 11.0 0.17512569 0.848134 0.49999994 -1.0 0.0 0.0 0.0 1.0 0.973045 -0.23061606 7.4505806E-9 -5.0 0.11530801 0.48652232 -0.8660256 11.0 0.1997194 0.8426817 0.49999988 -1.0 0.0 0.0 0.0 1.0 0.965926 -0.25881928 0.0 -5.0 0.12940961 0.48296285 -0.8660256 11.0 0.2241441 0.83651644 0.49999997 -1.0 0.0 0.0 0.0 1.0 0.95798945 -0.28680342 1.4901161E-8 -5.0 0.1434017 0.47899464 -0.8660255 11.0 0.24837908 0.8296433 0.4999999 -1.0 0.0 0.0 0.0 1.0 0.9492426 -0.31454504 1.4901161E-8 -5.0 0.15727247 0.47462118 -0.8660255 11.0 0.27240402 0.8220683 0.49999988 -1.0 0.0 0.0 0.0 1.0 0.9396926 -0.34202042 1.4901161E-8 -5.0 0.17101017 0.46984616 -0.86602557 11.0 0.29619837 0.8137977 0.49999988 -1.0 0.0 0.0 0.0 1.0 0.9492426 -0.31454498 1.4901161E-8 -5.0 0.15727246 0.47462118 -0.8660255 11.0 0.27240396 0.8220683 0.49999988 -1.0 0.0 0.0 0.0 1.0 0.9579897 -0.2868035 7.4505806E-9 -5.0 0.14340171 0.4789947 -0.8660256 11.0 0.24837914 0.8296434 0.49999997 -1.0 0.0 0.0 0.0 1.0 0.965926 -0.25881928 7.4505806E-9 -5.0 0.12940961 0.48296282 -0.8660257 11.0 0.2241441 0.8365165 0.49999994 -1.0 0.0 0.0 0.0 1.0 0.97304493 -0.23061606 0.0 -5.0 0.11530802 0.48652235 -0.86602557 11.0 0.19971938 0.84268165 0.49999994 -1.0 0.0 0.0 0.0 1.0 0.97934073 -0.20221777 7.4505806E-9 -5.0 0.101108864 0.48967025 -0.8660255 11.0 0.17512575 0.848134 0.49999994 -1.0 0.0 0.0 0.0 1.0 0.9848078 -0.17364833 0.0 -5.0 0.08682415 0.49240375 -0.8660255 11.0 0.15038387 0.8528686 0.49999988 -1.0 0.0 0.0 0.0 1.0 0.98944163 -0.14493199 0.0 -5.0 0.07246597 0.49472073 -0.86602545 11.0 0.12551479 0.8568816 0.4999999 -1.0 0.0 0.0 0.0 1.0 0.99323845 -0.11609302 0.0 -5.0 0.058046497 0.49661914 -0.86602557 11.0 0.100539505 0.86016977 0.5 -1.0 0.0 0.0 0.0 1.0 0.9961947 -0.0871558 3.7252903E-9 -5.0 0.043577887 0.4980972 -0.8660255 11.0 0.075479135 0.86272997 0.49999988 -1.0 0.0 0.0 0.0 1.0 0.9983082 -0.05814489 -1.8626451E-9 -5.0 0.02907244 0.49915397 -0.86602545 11.0 0.050354958 0.86456025 0.49999988 -1.0 0.0 0.0 0.0 1.0 0.999577 -0.029084716 1.8626451E-9 -5.0 0.014542355 0.49978837 -0.8660255 11.0 0.025188105 0.8656592 0.4999999 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -5.0 0.0 0.49999994 -0.8660255 11.0 0.0 0.8660255 0.49999994 -1.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#DerAleta-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="DerAleta-global-anim-globalSampler">
+          <input semantic="INPUT" source="#DerAleta-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#DerAleta-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#DerAleta-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#DerAleta-global-anim-globalSampler" target="DerAleta-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="DerAleta-local-anim" name="DerAleta-local-anim">
+      <animation>
+        <source id="DerAleta-local-anim-inSource-TIME">
+          <float_array count="25" id="DerAleta-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#DerAleta-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerAleta-local-anim-interpolation">
+          <Name_array count="25" id="DerAleta-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#DerAleta-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerAleta-local-anim-outSource-local">
+          <float_array count="400" id="DerAleta-local-anim-outSource-local-array">1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#DerAleta-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="DerAleta-local-anim-localSampler">
+          <input semantic="INPUT" source="#DerAleta-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#DerAleta-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#DerAleta-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#DerAleta-local-anim-localSampler" target="DerAleta-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="DerMano-global-anim" name="DerMano-global-anim">
+      <animation>
+        <source id="DerMano-global-anim-inSource-TIME">
+          <float_array count="25" id="DerMano-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#DerMano-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerMano-global-anim-interpolation">
+          <Name_array count="25" id="DerMano-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#DerMano-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerMano-global-anim-outSource-global">
+          <float_array count="400" id="DerMano-global-anim-outSource-global-array">1.0 0.0 0.0 -4.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.999577 0.0 0.029084738 -4.0 0.0 1.0 0.0 0.0 -0.029084738 0.0 0.999577 0.0 0.0 0.0 0.0 1.0 0.99830836 0.0 0.058144886 -4.0 0.0 1.0000002 0.0 0.0 -0.058144886 0.0 0.99830836 0.0 0.0 0.0 0.0 1.0 0.9961947 0.0 0.087155804 -4.0 0.0 1.0 0.0 0.0 -0.087155804 0.0 0.9961947 0.0 0.0 0.0 0.0 1.0 0.9932384 0.0 0.116093 -4.0 0.0 1.0 0.0 0.0 -0.116093 0.0 0.9932384 0.0 0.0 0.0 0.0 1.0 0.9894418 0.0 0.14493199 -4.0 0.0 1.0000002 0.0 0.0 -0.14493199 0.0 0.9894418 0.0 0.0 0.0 0.0 1.0 0.9848078 0.0 0.17364828 -4.0 0.0 1.0 0.0 0.0 -0.17364828 0.0 0.9848078 0.0 0.0 0.0 0.0 1.0 0.97934055 0.0 0.2022177 -4.0 0.0 1.0 0.0 0.0 -0.2022177 0.0 0.97934055 0.0 0.0 0.0 0.0 1.0 0.97304493 0.0 0.23061603 -4.0 0.0 1.0000001 0.0 0.0 -0.23061603 0.0 0.97304493 0.0 0.0 0.0 0.0 1.0 0.9659259 0.0 0.25881925 -4.0 0.0 1.0000001 0.0 0.0 -0.25881925 0.0 0.9659259 0.0 0.0 0.0 0.0 1.0 0.9579896 0.0 0.28680348 -4.0 0.0 1.0000001 0.0 0.0 -0.28680348 0.0 0.9579896 0.0 0.0 0.0 0.0 1.0 0.9492427 0.0 0.314545 -4.0 0.0 1.0000001 0.0 0.0 -0.314545 0.0 0.9492427 0.0 0.0 0.0 0.0 1.0 0.9396925 0.0 0.34202033 -4.0 0.0 1.0 0.0 0.0 -0.34202033 0.0 0.9396925 0.0 0.0 0.0 0.0 1.0 0.95150506 0.0 0.30763364 -4.0 0.0 1.0000001 0.0 0.0 -0.30763364 0.0 0.95150506 0.0 0.0 0.0 0.0 1.0 0.96205956 0.0 0.2728402 -4.0 0.0 1.0000002 0.0 0.0 -0.2728402 0.0 0.96205956 0.0 0.0 0.0 0.0 1.0 0.9713422 0.0 0.23768611 -4.0 0.0 1.0000002 0.0 0.0 -0.23768611 0.0 0.9713422 0.0 0.0 0.0 0.0 1.0 0.9793407 0.0 0.20221773 -4.0 0.0 1.0000001 0.0 0.0 -0.20221773 0.0 0.9793407 0.0 0.0 0.0 0.0 1.0 0.9860445 0.0 0.16648203 -4.0 0.0 1.0 0.0 0.0 -0.16648203 0.0 0.9860445 0.0 0.0 0.0 0.0 1.0 0.9914449 0.0 0.1305263 -4.0 0.0 1.0 0.0 0.0 -0.1305263 0.0 0.9914449 0.0 0.0 0.0 0.0 1.0 0.99553454 0.0 0.09439798 -4.0 0.0 1.0 0.0 0.0 -0.09439798 0.0 0.99553454 0.0 0.0 0.0 0.0 1.0 0.99830836 0.0 0.058144867 -4.0 0.0 1.0000002 0.0 0.0 -0.058144867 0.0 0.99830836 0.0 0.0 0.0 0.0 1.0 0.99976206 0.0 0.021814933 -4.0 0.0 1.0 0.0 0.0 -0.021814933 0.0 0.99976206 0.0 0.0 0.0 0.0 1.0 0.9998943 0.0 -0.014543895 -4.0 0.0 1.0000001 0.0 0.0 0.014543895 0.0 0.9998943 0.0 0.0 0.0 0.0 1.0 0.99870473 0.0 -0.050883483 -4.0 0.0 1.0000001 0.0 0.0 0.050883483 0.0 0.99870473 0.0 0.0 0.0 0.0 1.0 0.9961947 0.0 -0.08715579 -4.0 0.0 1.0 0.0 0.0 0.08715579 0.0 0.9961947 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#DerMano-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="DerMano-global-anim-globalSampler">
+          <input semantic="INPUT" source="#DerMano-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#DerMano-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#DerMano-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#DerMano-global-anim-globalSampler" target="DerMano-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="DerMano-local-anim" name="DerMano-local-anim">
+      <animation>
+        <source id="DerMano-local-anim-inSource-TIME">
+          <float_array count="25" id="DerMano-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#DerMano-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerMano-local-anim-interpolation">
+          <Name_array count="25" id="DerMano-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#DerMano-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerMano-local-anim-outSource-local">
+          <float_array count="400" id="DerMano-local-anim-outSource-local-array">1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#DerMano-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="DerMano-local-anim-localSampler">
+          <input semantic="INPUT" source="#DerMano-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#DerMano-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#DerMano-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#DerMano-local-anim-localSampler" target="DerMano-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="IzqAleta-global-anim" name="IzqAleta-global-anim">
+      <animation>
+        <source id="IzqAleta-global-anim-inSource-TIME">
+          <float_array count="25" id="IzqAleta-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#IzqAleta-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqAleta-global-anim-interpolation">
+          <Name_array count="25" id="IzqAleta-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#IzqAleta-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqAleta-global-anim-outSource-global">
+          <float_array count="400" id="IzqAleta-global-anim-outSource-global-array">1.0 0.0 0.0 5.0 0.0 0.49999994 -0.8660255 11.0 0.0 0.8660255 0.49999994 -1.0 0.0 0.0 0.0 1.0 0.99933904 0.036353018 3.7252903E-9 5.0 -0.018176503 0.49966943 -0.8660255 11.0 -0.03148264 0.86545306 0.49999994 -1.0 0.0 0.0 0.0 1.0 0.9973571 0.072657995 0.0 5.0 -0.036328986 0.49867842 -0.8660256 11.0 -0.06292368 0.8637367 0.49999994 -1.0 0.0 0.0 0.0 1.0 0.9940564 0.108866885 1.1175871E-8 5.0 -0.05443343 0.4970281 -0.8660255 11.0 -0.094281495 0.86087817 0.49999994 -1.0 0.0 0.0 0.0 1.0 0.98944163 0.14493188 7.4505806E-9 5.0 -0.07246593 0.49472076 -0.86602545 11.0 -0.12551472 0.8568816 0.4999999 -1.0 0.0 0.0 0.0 1.0 0.98351896 0.18080528 1.4901161E-8 5.0 -0.09040262 0.4917594 -0.8660255 11.0 -0.15658198 0.85175246 0.49999994 -1.0 0.0 0.0 0.0 1.0 0.97629607 0.21643965 1.4901161E-8 5.0 -0.10821979 0.48814797 -0.86602557 11.0 -0.18744224 0.84549725 0.49999997 -1.0 0.0 0.0 0.0 1.0 0.9677825 0.25178787 1.4901161E-8 5.0 -0.12589392 0.4838912 -0.8660255 11.0 -0.21805471 0.83812433 0.49999994 -1.0 0.0 0.0 0.0 1.0 0.9579897 0.28680333 0.0 5.0 -0.14340162 0.47899473 -0.8660256 11.0 -0.248379 0.8296434 0.49999994 -1.0 0.0 0.0 0.0 1.0 0.9469301 0.32143947 1.4901161E-8 5.0 -0.1607197 0.47346497 -0.86602545 11.0 -0.2783748 0.8200656 0.49999988 -1.0 0.0 0.0 0.0 1.0 0.934619 0.35565084 2.9802322E-8 5.0 -0.17782539 0.46730947 -0.8660255 11.0 -0.30800268 0.80940384 0.5 -1.0 0.0 0.0 0.0 1.0 0.92107236 0.38939202 2.9802322E-8 5.0 -0.19469595 0.4605361 -0.8660256 11.0 -0.3372234 0.7976721 0.5 -1.0 0.0 0.0 0.0 1.0 0.9063078 0.42261833 2.9802322E-8 5.0 -0.21130909 0.4531538 -0.86602545 11.0 -0.36599824 0.78488564 0.4999999 -1.0 0.0 0.0 0.0 1.0 0.9210722 0.38939193 2.9802322E-8 5.0 -0.19469592 0.46053606 -0.8660255 11.0 -0.33722335 0.797672 0.49999994 -1.0 0.0 0.0 0.0 1.0 0.9346191 0.35565084 2.9802322E-8 5.0 -0.17782539 0.46730953 -0.8660256 11.0 -0.3080027 0.80940396 0.50000006 -1.0 0.0 0.0 0.0 1.0 0.9469301 0.3214395 1.4901161E-8 5.0 -0.16071971 0.47346494 -0.86602545 11.0 -0.2783748 0.8200656 0.49999988 -1.0 0.0 0.0 0.0 1.0 0.95798963 0.28680328 2.2351742E-8 5.0 -0.1434016 0.4789948 -0.86602557 11.0 -0.24837893 0.82964337 0.5 -1.0 0.0 0.0 0.0 1.0 0.9677825 0.25178787 1.4901161E-8 5.0 -0.12589392 0.4838912 -0.8660255 11.0 -0.21805471 0.83812433 0.49999994 -1.0 0.0 0.0 0.0 1.0 0.97629607 0.21643966 7.4505806E-9 5.0 -0.1082198 0.48814797 -0.86602557 11.0 -0.18744227 0.84549725 0.5 -1.0 0.0 0.0 0.0 1.0 0.98351896 0.18080528 1.4901161E-8 5.0 -0.09040262 0.4917594 -0.8660255 11.0 -0.15658198 0.85175246 0.49999994 -1.0 0.0 0.0 0.0 1.0 0.9894419 0.14493188 7.4505806E-9 5.0 -0.07246593 0.49472088 -0.8660257 11.0 -0.12551472 0.85688186 0.50000006 -1.0 0.0 0.0 0.0 1.0 0.99405634 0.10886691 3.7252903E-9 5.0 -0.054433443 0.49702805 -0.86602545 11.0 -0.09428151 0.8608781 0.49999988 -1.0 0.0 0.0 0.0 1.0 0.9973569 0.07265799 3.7252903E-9 5.0 -0.036328983 0.49867833 -0.8660255 11.0 -0.06292367 0.86373657 0.49999988 -1.0 0.0 0.0 0.0 1.0 0.9993392 0.036353014 1.8626451E-9 5.0 -0.018176503 0.4996695 -0.8660256 11.0 -0.031482637 0.8654532 0.5 -1.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 5.0 0.0 0.49999994 -0.8660255 11.0 0.0 0.8660255 0.49999994 -1.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#IzqAleta-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="IzqAleta-global-anim-globalSampler">
+          <input semantic="INPUT" source="#IzqAleta-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#IzqAleta-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#IzqAleta-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#IzqAleta-global-anim-globalSampler" target="IzqAleta-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="IzqAleta-local-anim" name="IzqAleta-local-anim">
+      <animation>
+        <source id="IzqAleta-local-anim-inSource-TIME">
+          <float_array count="25" id="IzqAleta-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#IzqAleta-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqAleta-local-anim-interpolation">
+          <Name_array count="25" id="IzqAleta-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#IzqAleta-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqAleta-local-anim-outSource-local">
+          <float_array count="400" id="IzqAleta-local-anim-outSource-local-array">1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#IzqAleta-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="IzqAleta-local-anim-localSampler">
+          <input semantic="INPUT" source="#IzqAleta-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#IzqAleta-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#IzqAleta-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#IzqAleta-local-anim-localSampler" target="IzqAleta-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="IzqMano-global-anim" name="IzqMano-global-anim">
+      <animation>
+        <source id="IzqMano-global-anim-inSource-TIME">
+          <float_array count="25" id="IzqMano-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#IzqMano-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqMano-global-anim-interpolation">
+          <Name_array count="25" id="IzqMano-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#IzqMano-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqMano-global-anim-outSource-global">
+          <float_array count="400" id="IzqMano-global-anim-outSource-global-array">1.0 0.0 0.0 4.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.999577 -0.029084738 0.0 4.0 0.029084738 0.999577 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.99830836 -0.058144886 0.0 4.0 0.058144886 0.99830836 0.0 0.0 0.0 0.0 1.0000002 0.0 0.0 0.0 0.0 1.0 0.9961947 -0.087155804 0.0 4.0 0.087155804 0.9961947 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.9932384 -0.116093 0.0 4.0 0.116093 0.9932384 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.9894418 -0.14493199 0.0 4.0 0.14493199 0.9894418 0.0 0.0 0.0 0.0 1.0000002 0.0 0.0 0.0 0.0 1.0 0.9848078 -0.17364828 0.0 4.0 0.17364828 0.9848078 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.97934055 -0.2022177 0.0 4.0 0.2022177 0.97934055 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.97304493 -0.23061603 0.0 4.0 0.23061603 0.97304493 0.0 0.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.9659259 -0.25881925 0.0 4.0 0.25881925 0.9659259 0.0 0.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.9579896 -0.28680348 0.0 4.0 0.28680348 0.9579896 0.0 0.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.9492427 -0.314545 0.0 4.0 0.314545 0.9492427 0.0 0.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.9396925 -0.34202033 0.0 4.0 0.34202033 0.9396925 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.9492427 -0.314545 0.0 4.0 0.314545 0.9492427 0.0 0.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.9579896 -0.28680354 0.0 4.0 0.28680354 0.9579896 0.0 0.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.9659257 -0.2588193 0.0 4.0 0.2588193 0.9659257 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.97304475 -0.23061615 0.0 4.0 0.23061615 0.97304475 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.9793407 -0.20221794 0.0 4.0 0.20221794 0.9793407 0.0 0.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.9848078 -0.17364852 0.0 4.0 0.17364852 0.9848078 0.0 0.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.9894418 -0.14493226 0.0 4.0 0.14493226 0.9894418 0.0 0.0 0.0 0.0 1.0000002 0.0 0.0 0.0 0.0 1.0 0.9932384 -0.11609329 0.0 4.0 0.11609329 0.9932384 0.0 0.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.99619484 -0.087156124 0.0 4.0 0.087156124 0.99619484 0.0 0.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 0.99830836 -0.05814527 0.0 4.0 0.05814527 0.99830836 0.0 0.0 0.0 0.0 1.0000002 0.0 0.0 0.0 0.0 1.0 0.9995771 -0.029085128 0.0 4.0 0.029085128 0.9995771 0.0 0.0 0.0 0.0 1.0000001 0.0 0.0 0.0 0.0 1.0 1.0 -4.4703484E-7 0.0 4.0 4.4703484E-7 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#IzqMano-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="IzqMano-global-anim-globalSampler">
+          <input semantic="INPUT" source="#IzqMano-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#IzqMano-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#IzqMano-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#IzqMano-global-anim-globalSampler" target="IzqMano-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="IzqMano-local-anim" name="IzqMano-local-anim">
+      <animation>
+        <source id="IzqMano-local-anim-inSource-TIME">
+          <float_array count="25" id="IzqMano-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#IzqMano-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqMano-local-anim-interpolation">
+          <Name_array count="25" id="IzqMano-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#IzqMano-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqMano-local-anim-outSource-local">
+          <float_array count="400" id="IzqMano-local-anim-outSource-local-array">1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#IzqMano-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="IzqMano-local-anim-localSampler">
+          <input semantic="INPUT" source="#IzqMano-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#IzqMano-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#IzqMano-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#IzqMano-local-anim-localSampler" target="IzqMano-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="DerPie-global-anim" name="DerPie-global-anim">
+      <animation>
+        <source id="DerPie-global-anim-inSource-TIME">
+          <float_array count="25" id="DerPie-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#DerPie-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerPie-global-anim-interpolation">
+          <Name_array count="25" id="DerPie-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#DerPie-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerPie-global-anim-outSource-global">
+          <float_array count="400" id="DerPie-global-anim-outSource-global-array">1.0000001 0.0 0.0 -3.0 0.0 0.90630776 -0.42261848 3.0 0.0 0.42261848 0.90630776 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 -3.0 0.0 0.93718064 -0.34884495 3.0 0.0 0.34884495 0.93718064 0.0 0.0 0.0 0.0 1.0 1.0000002 0.0 0.0 -3.0 0.0 0.96205956 -0.27284026 3.0 0.0 0.27284026 0.96205956 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 -3.0 0.0 0.98078537 -0.19509059 3.0 0.0 0.19509059 0.98078537 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -3.0 0.0 0.9932384 -0.11609316 3.0 0.0 0.11609316 0.9932384 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -3.0 0.0 0.99933904 -0.036353286 3.0 0.0 0.036353286 0.99933904 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -3.0 0.0 0.9990483 0.0436191 3.0 0.0 -0.0436191 0.9990483 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -3.0 0.0 0.99236786 0.12331252 3.0 0.0 -0.12331252 0.99236786 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 -3.0 0.0 0.97934073 0.20221736 3.0 0.0 -0.20221736 0.97934073 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -3.0 0.0 0.96004987 0.27982882 3.0 0.0 -0.27982882 0.96004987 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 -3.0 0.0 0.9346192 0.35565057 3.0 0.0 -0.35565057 0.9346192 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 -3.0 0.0 0.9032107 0.42919776 3.0 0.0 -0.42919776 0.9032107 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -3.0 0.0 0.86602557 0.4999998 3.0 0.0 -0.4999998 0.86602557 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -3.0 0.0 0.90321064 0.42919767 3.0 0.0 -0.42919767 0.90321064 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 -3.0 0.0 0.9346192 0.35565057 3.0 0.0 -0.35565057 0.9346192 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -3.0 0.0 0.96004987 0.27982882 3.0 0.0 -0.27982882 0.96004987 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 -3.0 0.0 0.97934073 0.20221736 3.0 0.0 -0.20221736 0.97934073 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -3.0 0.0 0.99236786 0.12331259 3.0 0.0 -0.12331259 0.99236786 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 -3.0 0.0 0.9990483 0.04361916 3.0 0.0 -0.04361916 0.9990483 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -3.0 0.0 0.99933904 -0.036353197 3.0 0.0 0.036353197 0.99933904 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -3.0 0.0 0.9932384 -0.11609316 3.0 0.0 0.11609316 0.9932384 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 -3.0 0.0 0.98078537 -0.19509059 3.0 0.0 0.19509059 0.98078537 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 -3.0 0.0 0.96205944 -0.2728402 3.0 0.0 0.2728402 0.96205944 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -3.0 0.0 0.9371805 -0.34884495 3.0 0.0 0.34884495 0.9371805 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 -3.0 0.0 0.90630776 -0.42261848 3.0 0.0 0.42261848 0.90630776 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#DerPie-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="DerPie-global-anim-globalSampler">
+          <input semantic="INPUT" source="#DerPie-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#DerPie-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#DerPie-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#DerPie-global-anim-globalSampler" target="DerPie-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="DerPie-local-anim" name="DerPie-local-anim">
+      <animation>
+        <source id="DerPie-local-anim-inSource-TIME">
+          <float_array count="25" id="DerPie-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#DerPie-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerPie-local-anim-interpolation">
+          <Name_array count="25" id="DerPie-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#DerPie-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="DerPie-local-anim-outSource-local">
+          <float_array count="400" id="DerPie-local-anim-outSource-local-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#DerPie-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="DerPie-local-anim-localSampler">
+          <input semantic="INPUT" source="#DerPie-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#DerPie-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#DerPie-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#DerPie-local-anim-localSampler" target="DerPie-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="IzqPie-global-anim" name="IzqPie-global-anim">
+      <animation>
+        <source id="IzqPie-global-anim-inSource-TIME">
+          <float_array count="25" id="IzqPie-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#IzqPie-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqPie-global-anim-interpolation">
+          <Name_array count="25" id="IzqPie-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#IzqPie-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqPie-global-anim-outSource-global">
+          <float_array count="400" id="IzqPie-global-anim-outSource-global-array">0.99999994 0.0 0.0 3.0 0.0 0.81915206 0.57357633 3.0 0.0 -0.57357633 0.81915206 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 3.0 0.0 0.8549119 0.5187733 3.0 0.0 -0.5187733 0.8549119 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 3.0 0.0 0.887011 0.46174863 3.0 0.0 -0.46174863 0.887011 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 3.0 0.0 0.9153115 0.40274674 3.0 0.0 -0.40274674 0.9153115 0.0 0.0 0.0 0.0 1.0 0.99999994 0.0 0.0 3.0 0.0 0.93969256 0.34202015 3.0 0.0 -0.34202015 0.93969256 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 3.0 0.0 0.96005 0.27982914 3.0 0.0 -0.27982914 0.96005 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 3.0 0.0 0.976296 0.21643972 3.0 0.0 -0.21643972 0.976296 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 3.0 0.0 0.98836154 0.15212356 3.0 0.0 -0.15212356 0.98836154 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 3.0 0.0 0.9961947 0.08715588 3.0 0.0 -0.08715588 0.9961947 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 3.0 0.0 0.99976206 0.021815075 3.0 0.0 -0.021815075 0.99976206 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 3.0 0.0 0.9990483 -0.04361913 3.0 0.0 0.04361913 0.9990483 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 3.0 0.0 0.99405634 -0.10886666 3.0 0.0 0.10886666 0.99405634 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 3.0 0.0 0.98480785 -0.17364791 3.0 0.0 0.17364791 0.98480785 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 3.0 0.0 0.99405646 -0.10886665 3.0 0.0 0.10886665 0.99405646 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 3.0 0.0 0.9990483 -0.043619167 3.0 0.0 0.043619167 0.9990483 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 3.0 0.0 0.99976206 0.021815075 3.0 0.0 -0.021815075 0.99976206 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 3.0 0.0 0.9961947 0.08715592 3.0 0.0 -0.08715592 0.9961947 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 3.0 0.0 0.98836166 0.15212354 3.0 0.0 -0.15212354 0.98836166 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 3.0 0.0 0.9762961 0.21643971 3.0 0.0 -0.21643971 0.9762961 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 3.0 0.0 0.96004987 0.27982906 3.0 0.0 -0.27982906 0.96004987 0.0 0.0 0.0 0.0 1.0 1.0000002 0.0 0.0 3.0 0.0 0.9396928 0.34202024 3.0 0.0 -0.34202024 0.9396928 0.0 0.0 0.0 0.0 1.0 1.0000002 0.0 0.0 3.0 0.0 0.91531163 0.40274683 3.0 0.0 -0.40274683 0.91531163 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 3.0 0.0 0.8870109 0.46174866 3.0 0.0 -0.46174866 0.8870109 0.0 0.0 0.0 0.0 1.0 1.0000001 0.0 0.0 3.0 0.0 0.8549119 0.5187734 3.0 0.0 -0.5187734 0.8549119 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 3.0 0.0 0.819152 0.5735764 3.0 0.0 -0.5735764 0.819152 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#IzqPie-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="IzqPie-global-anim-globalSampler">
+          <input semantic="INPUT" source="#IzqPie-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#IzqPie-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#IzqPie-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#IzqPie-global-anim-globalSampler" target="IzqPie-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="IzqPie-local-anim" name="IzqPie-local-anim">
+      <animation>
+        <source id="IzqPie-local-anim-inSource-TIME">
+          <float_array count="25" id="IzqPie-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#IzqPie-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqPie-local-anim-interpolation">
+          <Name_array count="25" id="IzqPie-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#IzqPie-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="IzqPie-local-anim-outSource-local">
+          <float_array count="400" id="IzqPie-local-anim-outSource-local-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#IzqPie-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="IzqPie-local-anim-localSampler">
+          <input semantic="INPUT" source="#IzqPie-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#IzqPie-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#IzqPie-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#IzqPie-local-anim-localSampler" target="IzqPie-local/matrix"/>
+      </animation>
+    </animation>
+  </library_animations>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="Root-global" name="Root-global" sid="Root-global">
+        <matrix sid="matrix">1.0 0.0 -8.742278E-8 0.0 0.0 1.0 0.0 0.0 -8.742278E-8 0.0 -1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+        <node id="Body-global" name="Body-global" sid="Body-global">
+          <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 -0.0871557 0.9961947 4.000091 0.0 -0.9961947 -0.0871557 5.0001607 0.0 0.0 0.0 1.0 </matrix>
+          <node id="Cuerpo-global" name="Cuerpo-global" sid="Cuerpo-global">
+            <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 0.9961947 -0.08715603 3.0 0.0 0.08715603 0.9961947 2.0 0.0 0.0 0.0 1.0 </matrix>
+            <node id="Cuerpo-local" name="Cuerpo-local" sid="Cuerpo-local">
+              <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 7.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+              <instance_geometry url="#Cuerpo-Geom">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="Cuerpo-Material" target="#Cuerpo-Material">
+                      <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="Cuerpo-tex-bind"/>
+                    </instance_material>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+            <node id="Cabeza-global" name="Cabeza-global" sid="Cabeza-global">
+              <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 0.34202012 -0.9396927 13.0 0.0 0.9396927 0.34202012 -1.0 0.0 0.0 0.0 1.0 </matrix>
+              <node id="Cabeza-local" name="Cabeza-local" sid="Cabeza-local">
+                <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 3.5 0.0 0.0 1.0 -1.5000002 0.0 0.0 0.0 1.0 </matrix>
+                <instance_geometry url="#Cabeza-Geom">
+                  <bind_material>
+                    <technique_common>
+                      <instance_material symbol="Cabeza-Material" target="#Cabeza-Material">
+                        <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="Cabeza-tex-bind"/>
+                      </instance_material>
+                    </technique_common>
+                  </bind_material>
+                </instance_geometry>
+              </node>
+            </node>
+            <node id="DerAleta-global" name="DerAleta-global" sid="DerAleta-global">
+              <matrix sid="matrix">1.0 0.0 0.0 -5.0 0.0 0.49999994 -0.8660255 11.0 0.0 0.8660255 0.49999994 -1.0 0.0 0.0 0.0 1.0 </matrix>
+              <node id="DerAleta-local" name="DerAleta-local" sid="DerAleta-local">
+                <matrix sid="matrix">1.0 0.0 0.0 -2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+                <instance_geometry url="#DerAleta-Geom">
+                  <bind_material>
+                    <technique_common>
+                      <instance_material symbol="DerAleta-Material" target="#DerAleta-Material">
+                        <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="DerAleta-tex-bind"/>
+                      </instance_material>
+                    </technique_common>
+                  </bind_material>
+                </instance_geometry>
+              </node>
+              <node id="DerMano-global" name="DerMano-global" sid="DerMano-global">
+                <matrix sid="matrix">1.0 0.0 0.0 -4.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+                <node id="DerMano-local" name="DerMano-local" sid="DerMano-local">
+                  <matrix sid="matrix">1.0 0.0 0.0 -2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+                  <instance_geometry url="#DerMano-Geom">
+                    <bind_material>
+                      <technique_common>
+                        <instance_material symbol="DerMano-Material" target="#DerMano-Material">
+                          <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="DerMano-tex-bind"/>
+                        </instance_material>
+                      </technique_common>
+                    </bind_material>
+                  </instance_geometry>
+                </node>
+              </node>
+            </node>
+            <node id="IzqAleta-global" name="IzqAleta-global" sid="IzqAleta-global">
+              <matrix sid="matrix">1.0 0.0 0.0 5.0 0.0 0.49999994 -0.8660255 11.0 0.0 0.8660255 0.49999994 -1.0 0.0 0.0 0.0 1.0 </matrix>
+              <node id="IzqAleta-local" name="IzqAleta-local" sid="IzqAleta-local">
+                <matrix sid="matrix">1.0 0.0 0.0 2.0 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+                <instance_geometry url="#IzqAleta-Geom">
+                  <bind_material>
+                    <technique_common>
+                      <instance_material symbol="IzqAleta-Material" target="#IzqAleta-Material">
+                        <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="IzqAleta-tex-bind"/>
+                      </instance_material>
+                    </technique_common>
+                  </bind_material>
+                </instance_geometry>
+              </node>
+              <node id="IzqMano-global" name="IzqMano-global" sid="IzqMano-global">
+                <matrix sid="matrix">1.0 0.0 0.0 4.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+                <node id="IzqMano-local" name="IzqMano-local" sid="IzqMano-local">
+                  <matrix sid="matrix">1.0 0.0 0.0 2.5 0.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+                  <instance_geometry url="#IzqMano-Geom">
+                    <bind_material>
+                      <technique_common>
+                        <instance_material symbol="IzqMano-Material" target="#IzqMano-Material">
+                          <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="IzqMano-tex-bind"/>
+                        </instance_material>
+                      </technique_common>
+                    </bind_material>
+                  </instance_geometry>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node id="DerPie-global" name="DerPie-global" sid="DerPie-global">
+            <matrix sid="matrix">1.0000001 0.0 0.0 -3.0 0.0 0.90630776 -0.42261848 3.0 0.0 0.42261848 0.90630776 0.0 0.0 0.0 0.0 1.0 </matrix>
+            <node id="DerPie-local" name="DerPie-local" sid="DerPie-local">
+              <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 </matrix>
+              <instance_geometry url="#DerPie-Geom">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="DerPie-Material" target="#DerPie-Material">
+                      <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="DerPie-tex-bind"/>
+                    </instance_material>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+          </node>
+          <node id="IzqPie-global" name="IzqPie-global" sid="IzqPie-global">
+            <matrix sid="matrix">0.99999994 0.0 0.0 3.0 0.0 0.81915206 0.57357633 3.0 0.0 -0.57357633 0.81915206 0.0 0.0 0.0 0.0 1.0 </matrix>
+            <node id="IzqPie-local" name="IzqPie-local" sid="IzqPie-local">
+              <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.5 0.0 0.0 1.0 -0.99999994 0.0 0.0 0.0 1.0 </matrix>
+              <instance_geometry url="#IzqPie-Geom">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="IzqPie-Material" target="#IzqPie-Material">
+                      <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="IzqPie-tex-bind"/>
+                    </instance_material>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+          </node>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>
